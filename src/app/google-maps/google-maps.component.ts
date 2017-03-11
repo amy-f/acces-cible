@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { SebmGoogleMap, SebmGoogleMapPolygon, LatLngLiteral } from 'angular2-google-maps/core';
 
+import { AccesCibleService } from '../service/access-cible.service';
+
 @Component({
   selector: 'app-google-maps',
   templateUrl: './google-maps.component.html',
@@ -26,7 +28,7 @@ export class GoogleMapsComponent implements OnInit {
   toggleWalk: boolean;
   toggleBike: boolean;
 
-  constructor() { }
+  constructor(private accesCibleService: AccesCibleService) { }
 
   ngOnInit() {
     this.initToggle();
@@ -66,13 +68,7 @@ export class GoogleMapsComponent implements OnInit {
   }
 
   initPaths() {
-        this.busPaths = [
-      { lat: 51.373858,  lng: 7.815982 },
-      { lat: 51.673858,  lng: 7.215982 },
-      { lat: 51.673858,  lng: 8.011111 },
-      { lat: 51.373858,  lng: 7.215982 },
-      { lat: 51.373858,  lng: 7.895982 }
-    ];
+        this.getBusPaths();
 
     this.metroPaths = [
       { lat: 51.373858,  lng: 7.815982 },
@@ -105,6 +101,11 @@ export class GoogleMapsComponent implements OnInit {
       { lat: 51.373858,  lng: 7.215982 },
       { lat: 51.373858,  lng: 7.895982 }
     ];
+  }
+
+  getBusPaths() {
+    let result = this.accesCibleService.getMock();
+    
   }
 
 }

@@ -1,4 +1,4 @@
-export class result {
+export class Result {
     bus: {
       positionsPol : {
         lat: string;

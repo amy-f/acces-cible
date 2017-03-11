@@ -1,3 +1,13 @@
 <div class="ui-g">
-  <app-google-maps class="gmap"></app-google-maps>
+  <app-google-maps class="gmap" 
+  [address]="address"
+  [metroPaths]="metroPaths"
+  [busPaths]="metroPaths"
+  [trainPaths]="metroPaths"
+  [walkPaths]="metroPaths"
+  [bikePaths]="bikePaths"
+  [bikeStartPoints]="bikeStartPoints"
+  [busLines]="busLines"
+  [metroLines]="metroLines">
+  </app-google-maps>
 </div>

@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import { Result, Bus } from '../models/result';
+import { Result, TransportCom } from '../models/result';
 
 @Injectable()
 export class AccesCibleService {
@@ -15,7 +15,7 @@ export class AccesCibleService {
     position.push({'lat':'7.464800', 'lng': '42.5792'});
     position.push({'lat':'7.464457', 'lng': '42.5450'});
 
-    result.bus = new Bus();
+    result.bus = new TransportCom();
     result.bus.positionsPol = position;
 
     return result;

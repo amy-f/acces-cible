@@ -7,7 +7,8 @@ import { AccesCibleService } from '../service/access-cible.service';
 @Component({
   selector: 'app-google-maps',
   templateUrl: './google-maps.component.html',
-  styleUrls: ['./google-maps.component.css']
+  styleUrls: ['./google-maps.component.css'],
+  providers: [AccesCibleService]
 })
 export class GoogleMapsComponent implements OnInit {
 
@@ -105,7 +106,7 @@ export class GoogleMapsComponent implements OnInit {
 
   getBusPaths() {
     let result = this.accesCibleService.getMock();
-    
+
   }
 
 }

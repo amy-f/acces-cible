@@ -16,11 +16,7 @@ import { ThePageComponent } from './the-page/the-page.component';
 import { PageResultatComponent } from './page-resultat/page-resultat.component';
 
 import { AdressService } from './util/adress.service';
-
-
-
-
-
+import { AccesCibleService } from './service/access-cible.service';
 
 
 @NgModule({
@@ -47,7 +43,8 @@ import { AdressService } from './util/adress.service';
     InputSwitchModule
   ],
   providers: [
-    AdressService
+    AdressService,
+    AccesCibleService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone, Output, EventEmitter } from '@angular/core';
 import { FormControl } from "@angular/forms";
 
 import { MapsAPILoader } from 'angular2-google-maps/core';
+
+import { Address } from '../models/address'
 
 @Component({
   selector: 'app-auto-complete-adress',
@@ -9,6 +11,11 @@ import { MapsAPILoader } from 'angular2-google-maps/core';
   styleUrls: ['./auto-complete-adress.component.css']
 })
 export class AutoCompleteAdressComponent implements OnInit {
+
+  //http://brianflove.com/2016/10/18/angular-2-google-maps-places-autocomplete/
+
+  @Output()
+  onTypeAddress = new EventEmitter<Address>();
 
   @ViewChild("search")
   public searchElementRef: ElementRef;
@@ -23,6 +30,7 @@ export class AutoCompleteAdressComponent implements OnInit {
   ngOnInit() {
     this.searchControl = new FormControl();
     this.loadPlaceAutocomplete();
+    
   }
 
   private loadPlaceAutocomplete() {

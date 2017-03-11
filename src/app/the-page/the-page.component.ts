@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThePageComponent implements OnInit {
 
+  adresse: string;
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  onClickSearch () {
+    alert("this.adresse");
   }
 
 }

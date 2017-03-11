@@ -4,6 +4,8 @@ import { SebmGoogleMap, SebmGoogleMapPolygon, LatLngLiteral } from 'angular2-goo
 
 import { AccesCibleService } from '../service/access-cible.service';
 
+import { Ligne } from '../models/result';
+
 @Component({
   selector: 'app-google-maps',
   templateUrl: './google-maps.component.html',
@@ -17,13 +19,15 @@ export class GoogleMapsComponent implements OnInit {
 
   paths: Array<LatLngLiteral>;
 
-  metroPaths: Array<LatLngLiteral>;
-  busPaths: Array<LatLngLiteral>;
-  trainPaths: Array<LatLngLiteral>;
-  walkPaths: Array<LatLngLiteral>;
+  metroPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
+  busPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
+  trainPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
+  walkPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
 
   bikeStartPoints: Array<LatLngLiteral> = Array<LatLngLiteral>();
-  busStops: Array<LatLngLiteral> = Array<LatLngLiteral>();
+
+  busLines: Ligne[] = [];
+  metroLines: Ligne[] = [];
 
   toggleMetro: boolean;
   toggleBus: boolean;
@@ -72,38 +76,6 @@ export class GoogleMapsComponent implements OnInit {
 
   initPaths() {
         this.getPaths();
-
-    // this.metroPaths = [
-    //   { lat: 51.373858,  lng: 7.815982 },
-    //   { lat: 51.673858,  lng: 7.215982 },
-    //   { lat: 51.673858,  lng: 8.011111 },
-    //   { lat: 51.373858,  lng: 7.215982 },
-    //   { lat: 51.373858,  lng: 7.895982 }
-    // ];
-
-    // this.bikePaths = [
-    //   { lat: 51.373858,  lng: 7.815982 },
-    //   { lat: 51.673858,  lng: 7.215982 },
-    //   { lat: 51.673858,  lng: 8.011111 },
-    //   { lat: 51.373858,  lng: 7.215982 },
-    //   { lat: 51.373858,  lng: 7.895982 }
-    // ];
-
-    // this.walkPaths = [
-    //   { lat: 51.373858,  lng: 7.815982 },
-    //   { lat: 51.673858,  lng: 7.215982 },
-    //   { lat: 51.673858,  lng: 8.011111 },
-    //   { lat: 51.373858,  lng: 7.215982 },
-    //   { lat: 51.373858,  lng: 7.895982 }
-    // ];
-
-    // this.trainPaths = [
-    //   { lat: 51.373858,  lng: 7.815982 },
-    //   { lat: 51.673858,  lng: 7.215982 },
-    //   { lat: 51.673858,  lng: 8.011111 },
-    //   { lat: 51.373858,  lng: 7.215982 },
-    //   { lat: 51.373858,  lng: 7.895982 }
-    // ];
   }
 
   getPaths() {
@@ -115,12 +87,16 @@ export class GoogleMapsComponent implements OnInit {
     console.log(this.metroPaths);
 
     for (let bikePoint of result.velo) {
-      console.log(bikePoint.start);
         this.bikeStartPoints.push(bikePoint.start);
-      // todo: calculate distance at some point??
     }
 
-    console.log(this.bikeStartPoints);
+    for (let busLine of result.bus.ligne) {
+      this.busLines.push(busLine);
+    }
+
+    for (let metroLine of result.metro.ligne) {
+      this.metroLines.push(metroLine);
+    }
   }
 
 }

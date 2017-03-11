@@ -1,6 +1,10 @@
 <sebm-google-map [latitude]="lat" [longitude]="lng">
 
-  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+  <sebm-google-map-marker [latitude]="lat" [longitude]="lng">
+    <sebm-google-map-info-window [disableAutoPan]="true">
+         Hi, this is the content of the <strong>info window</strong>
+       </sebm-google-map-info-window>
+  </sebm-google-map-marker>
 
   <sebm-map-polygon [paths]="busPaths" fillColor="#ff5500" strokeColor="#aa4655" [editable]="true" [visible]="toggleBus"></sebm-map-polygon>
   <sebm-map-polygon [paths]="walkPaths" fillColor="#82b1ff" strokeColor="#2659ad" [editable]="true" [visible]="toggleWalk"></sebm-map-polygon>
@@ -8,12 +12,24 @@
   <sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [editable]="true" [visible]="toggleTrain"></sebm-map-polygon>
 
   <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" 
-        [visible]="toggleBike" iconUrl="assets/velo-icon-small.png"></sebm-google-map-marker>
+        [visible]="toggleBike" iconUrl="assets/velo-icon-small.png">
+       </sebm-google-map-marker>
 
-  <!--<sebm-google-map-marker *ngFor="let busStop of busStops" [latitude]="busStop.lat" [longitude]="busStop.lng" 
-        [visible]="toggleBus" iconUrl="assets/velo-icon.png" title="busStop."></sebm-google-map-marker>-->
+  <sebm-google-map-marker *ngFor="let busLine of busLines" [latitude]="busLine.stop.lat" [longitude]="busLine.stop.lng" 
+        [visible]="toggleBus" iconUrl="assets/bus.png" title="busLine.nom">
+        <sebm-google-map-info-window [disableAutoPan]="true">
+         {{ busLine.nom }}
+       </sebm-google-map-info-window>
+  </sebm-google-map-marker>
+
+  <sebm-google-map-marker *ngFor="let metroLine of metroLines" [latitude]="metroLine.stop.lat" [longitude]="metroLine.stop.lng" 
+        [visible]="toggleMetro" iconUrl="assets/metro.png" title="metroLine.nom">
+        <sebm-google-map-info-window [disableAutoPan]="true">
+         {{ metroLine.nom }}
+       </sebm-google-map-info-window>
+  </sebm-google-map-marker>
   
-  <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [editable]="true" [visible]="toggleBike"></sebm-map-polygon>
+  <!--<sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [editable]="true" [visible]="toggleBike"></sebm-map-polygon>-->
 
 </sebm-google-map>
 

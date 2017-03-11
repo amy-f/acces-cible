@@ -8,7 +8,10 @@
   <sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [editable]="true" [visible]="toggleTrain"></sebm-map-polygon>
 
   <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" 
-        [visible]="toggleBike" iconUrl="assets/velo-icon.png"></sebm-google-map-marker>
+        [visible]="toggleBike" iconUrl="assets/velo-icon-small.png"></sebm-google-map-marker>
+
+  <!--<sebm-google-map-marker *ngFor="let busStop of busStops" [latitude]="busStop.lat" [longitude]="busStop.lng" 
+        [visible]="toggleBus" iconUrl="assets/velo-icon.png" title="busStop."></sebm-google-map-marker>-->
   
   <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [editable]="true" [visible]="toggleBike"></sebm-map-polygon>
 

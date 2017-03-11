@@ -1,3 +1,10 @@
+export class Cote {
+  coteGlobal: number;
+  coteBus: number;
+  coteVelo: number;
+  coteMetro: number;
+}
+
 export class Result {
     bus: TransportCom;
     metro: TransportCom;

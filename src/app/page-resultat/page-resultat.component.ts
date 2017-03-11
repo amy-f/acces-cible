@@ -6,6 +6,7 @@ import { Ligne } from '../models/result';
 
 import { AdressService } from '../util/adress.service';
 import { AccesCibleService } from '../service/access-cible.service';
+import { NoteCalculatorService } from '../service/note-calculator.service';
 
 import { LatLngLiteral } from 'angular2-google-maps/core';
 
@@ -47,7 +48,8 @@ export class PageResultatComponent implements OnInit {
 
   constructor(
     private adressService: AdressService,
-    private accesCibleService: AccesCibleService
+    private accesCibleService: AccesCibleService,
+    private noteService: NoteCalculatorService
   ) { }
 
   ngOnInit() {
@@ -60,6 +62,8 @@ export class PageResultatComponent implements OnInit {
 
   getPaths() {
     const result = this.accesCibleService.getMock();
+
+    this.noteService.computeNote(result);
 
     this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
     this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;

@@ -1,27 +1,28 @@
-<md-toolbar>
-  <span>Acces-cible</span>
-</md-toolbar>
-
-<md-grid-list cols="1">
-  <md-input-container>
-    <textarea mdInput [(ngModel)]="adresse" placeholder="Address"></textarea>
-  </md-input-container>
-</md-grid-list>
-
-<md-grid-list cols="1">
-  <button md-button (onClick)="onClickSearch()">Click me!</button>
-</md-grid-list>
+<div class="ui-g">
+  Un beau titre de l'app
+</div>
 
 
+<div class="ui-g">
+  <div class="ui-g-8">
+    <input type="text" size="30" pInputText [disabled]="disabled" />
+  </div>
+  <div class="ui-g-4">
+    <button type="button" (click)="toggleDisabled()" pButton label="Toggle"></button>
+  </div>
+</div>
 
-<md-grid-list cols="1">
-  Champ de configuration
-</md-grid-list>
 
-<md-grid-list cols="1">
-  Résultats
-</md-grid-list>
+<div class="ui-g">
+  <app-google-maps class="gmap"></app-google-maps>
+</div>
 
-<md-grid-list cols="1">
-  <app-google-maps></app-google-maps>
-</md-grid-list>
+
+
+
+
+
+
+<!--
+
+-->

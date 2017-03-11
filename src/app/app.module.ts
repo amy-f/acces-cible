@@ -9,7 +9,8 @@ import { ThePageComponent } from './the-page/the-page.component';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
-import { MaterialModule } from '@angular/material';
+import { InputTextModule, ButtonModule } from 'primeng/primeng';
+import { MenuItem } from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { MaterialModule } from '@angular/material';
   ],
   imports: [
     BrowserModule,
-    MaterialModule,
     FormsModule,
     HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAmdLnTfE2KzdRjmsyYtXjNer11yUgU3Ig'
-    })
+    }),
+    InputTextModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,11 +12,11 @@ export class ThePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
   onClickSearch () {
-    alert("this.adresse");
+    console.log("Jordane");
+    console.log(this.adresse);
   }
 
 }

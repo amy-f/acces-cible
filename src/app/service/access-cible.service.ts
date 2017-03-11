@@ -52,30 +52,28 @@ export class AccesCibleService {
     positionMetro.push({'lat':7.5745, 'lng': -42.973543});
     positionMetro.push({'lat':8.546786, 'lng': -43.56775});
 
-    result.metro.positionsPol = positionMetro;
-
     result.metro = new TransportCom();
     result.metro.positionsPol = positionMetro;
+
+    result.metro.ligne = [];
 
     let metroStop = new Ligne();
     metroStop.stop = {lat: 7.15645, lng: -42.854};
     metroStop.nom = 'Ligne bleu';
 
-    result.bus.ligne.push(metroStop);
+    result.metro.ligne.push(metroStop);
 
     metroStop = new Ligne();
     metroStop.stop = {lat: 7.4754, lng: -42.1025};
     metroStop.nom = 'ligne verte';
 
-    result.bus.ligne.push(metroStop);
+    result.metro.ligne.push(metroStop);
 
     metroStop = new Ligne();
     metroStop.stop = {lat: 7.344545, lng: -42.2545};
     metroStop.nom = 'ligne orange';
 
     result.metro.ligne.push(metroStop);
-
-
 
 
     //VELO

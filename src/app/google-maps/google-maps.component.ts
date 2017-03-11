@@ -112,7 +112,8 @@ export class GoogleMapsComponent implements OnInit {
     this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
     this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
 
-    console.log(result);
+    console.log(this.busPaths);
+    console.log(this.metroPaths);
 
     for (let bikePoint of result.velo) {
       console.log(bikePoint.start);

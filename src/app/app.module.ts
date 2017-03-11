@@ -9,6 +9,8 @@ import { ThePageComponent } from './the-page/the-page.component';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
+import { MaterialModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     FormsModule,
     HttpModule,
     AgmCoreModule.forRoot({

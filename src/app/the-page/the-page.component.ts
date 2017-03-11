@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, ViewChild, ElementRef } from '@angular/core';
+import { FormControl } from "@angular/forms";
+
 import { AccesCibleService } from '../service/access-cible.service';
 import { Router } from '@angular/router';
 
 import { AdressService } from '../util/adress.service';
 
+import { MapsAPILoader } from 'angular2-google-maps/core';
 
 @Component({
   selector: 'app-the-page',
@@ -13,14 +16,24 @@ import { AdressService } from '../util/adress.service';
 })
 export class ThePageComponent implements OnInit {
 
+  @ViewChild("search")
+  public searchElementRef: ElementRef;
+
   adresse: string;
+
+  public searchControl: FormControl;
 
   constructor(
     private router: Router,
-    private adressService: AdressService
+    private adressService: AdressService,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone
   ) { }
 
   ngOnInit() {
+
+    //create search FormControl
+    this.searchControl = new FormControl();
   }
 
   onClickSearch() {

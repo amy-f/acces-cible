@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule } from 'primeng/primeng';
+import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule,PanelModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
 import { InputSwitchModule } from 'primeng/primeng';
 
@@ -56,7 +56,8 @@ import {SliderModule} from "primeng/components/slider/slider";
     DialogModule,
     InputSwitchModule,
     AccordionModule,
-    SliderModule
+    SliderModule,
+    PanelModule
   ],
   providers: [
     AdressService,

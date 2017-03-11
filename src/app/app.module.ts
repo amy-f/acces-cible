@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import {DialogModule} from 'primeng/primeng';
+
 import { InputTextModule, ButtonModule, AutoCompleteModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
 import { InputSwitchModule } from 'primeng/primeng';
@@ -18,6 +20,7 @@ import { PageResultatComponent } from './page-resultat/page-resultat.component';
 import { AdressService } from './util/adress.service';
 import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
+import { PageSettingsComponent } from './page-settings/page-settings.component';
 
 
 @NgModule({
@@ -26,13 +29,14 @@ import { AccesCibleService } from './service/access-cible.service';
     GoogleMapsComponent,
     ThePageComponent,
     PageResultatComponent,
-    AutoCompleteAdressComponent
+    AutoCompleteAdressComponent,
+    PageSettingsComponent
   ],
   imports: [
     RouterModule.forRoot([
       { path: '', redirectTo: '/accueil', pathMatch: 'full' },
       { path: 'resultats', component: PageResultatComponent },
-      { path: 'accueil', component: ThePageComponent },
+      { path: 'accueil', component: ThePageComponent }
     ]),
     BrowserModule,
     HttpModule,
@@ -45,6 +49,7 @@ import { AccesCibleService } from './service/access-cible.service';
     AutoCompleteModule,
     FormsModule,
     ReactiveFormsModule,
+    DialogModule,
     InputSwitchModule
   ],
   providers: [

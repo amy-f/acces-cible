@@ -1,0 +1,26 @@
+.container {
+    background-color:white;
+    width:100vh;
+    height:100vh;
+    position:fixed;
+    z-index: 100;
+    display:none;
+}
+
+.display {
+    display:inherit;
+}
+
+.fa-arrow-left {
+    font-size: 34px!important;
+    left: 18px;
+    top: 18px;
+    position: fixed;
+}
+
+.fa-arrow-left:hover {
+  color:red;
+  font-size: 40px!important;
+  left: 15px;
+  top: 15px;
+}

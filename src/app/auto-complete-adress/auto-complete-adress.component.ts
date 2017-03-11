@@ -1,61 +1,61 @@
-import { Component, OnInit, ViewChild, ElementRef, NgZone, Output, EventEmitter } from '@angular/core';
-import { FormControl } from "@angular/forms";
+import {Component, OnInit, ViewChild, ElementRef, NgZone, Output, EventEmitter, Directive} from '@angular/core';
+import {FormControl, NgModel} from "@angular/forms";
 
 import { MapsAPILoader } from 'angular2-google-maps/core';
 
 import { Address } from '../models/address'
+
+
+@Directive({
+  selector: '[Googleplace]',
+  providers: [NgModel],
+  host: {
+    '(input)' : 'onInputChange()'
+  }
+})
+export class GoogleplaceDirective {
+
+  @Output() setAddress: EventEmitter<any> = new EventEmitter();
+  modelValue:any;
+  autocomplete:any;
+  private _el:HTMLInputElement;
+
+
+  constructor(el: ElementRef,private model:NgModel) {
+    this._el = el.nativeElement;
+    this.modelValue = this.model;
+    var input = this._el;
+
+    this.autocomplete = new google.maps.places.Autocomplete(input, {});
+    google.maps.event.addListener(this.autocomplete, 'place_changed', ()=> {
+      var place = this.autocomplete.getPlace();
+      this.invokeEvent(place);
+
+    });
+  }
+
+  invokeEvent(place:Object) {
+    this.setAddress.emit(place);
+  }
+
+  onInputChange() {
+    console.log(this.model);
+  }
+}
 
 @Component({
   selector: 'app-auto-complete-adress',
   templateUrl: './auto-complete-adress.component.html',
   styleUrls: ['./auto-complete-adress.component.css']
 })
-export class AutoCompleteAdressComponent implements OnInit {
+export class AutoCompleteAdressComponent {
 
-  //http://brianflove.com/2016/10/18/angular-2-google-maps-places-autocomplete/
 
-  @Output()
-  onTypeAddress = new EventEmitter<Address>();
 
-  @ViewChild("search")
-  public searchElementRef: ElementRef;
-  public searchControl: FormControl;
 
   constructor(
-    private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
   ) {
   }
 
-  ngOnInit() {
-    this.searchControl = new FormControl();
-    this.loadPlaceAutocomplete();
-    
-  }
-
-  private loadPlaceAutocomplete() {
-
-    this.mapsAPILoader.load().then(() => {
-
-      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ["address"]
-      });
-
-      autocomplete.addListener("place_changed", () => {
-        this.ngZone.run(() => {
-
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
-
-          //this.coordonate.latitude = place.geometry.location.lat();
-          //this.coordonate.longitude = place.geometry.location.lng();
-        });
-      });
-
-    });
-  }
 
 }

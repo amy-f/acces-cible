@@ -16,7 +16,7 @@ import { ThePageComponent } from './the-page/the-page.component';
 import { PageResultatComponent } from './page-resultat/page-resultat.component';
 
 import { AdressService } from './util/adress.service';
-import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
+import { AutoCompleteAdressComponent, GoogleplaceDirective } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
 
 
@@ -26,7 +26,8 @@ import { AccesCibleService } from './service/access-cible.service';
     GoogleMapsComponent,
     ThePageComponent,
     PageResultatComponent,
-    AutoCompleteAdressComponent
+    AutoCompleteAdressComponent,
+    GoogleplaceDirective
   ],
   imports: [
     RouterModule.forRoot([

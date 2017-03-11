@@ -15,7 +15,7 @@ export class PageResultatComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.adressService.adress);
+    console.log(this.adressService.address);
   }
 
 }

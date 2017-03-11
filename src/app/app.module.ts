@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InputTextModule, ButtonModule, AutoCompleteModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
+import { InputSwitchModule } from 'primeng/primeng';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
@@ -16,6 +17,7 @@ import { PageResultatComponent } from './page-resultat/page-resultat.component';
 
 import { AdressService } from './util/adress.service';
 import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
+import { AccesCibleService } from './service/access-cible.service';
 
 
 @NgModule({
@@ -42,10 +44,12 @@ import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complet
     ButtonModule,
     AutoCompleteModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputSwitchModule
   ],
   providers: [
-    AdressService
+    AdressService,
+    AccesCibleService
   ],
   bootstrap: [AppComponent]
 })

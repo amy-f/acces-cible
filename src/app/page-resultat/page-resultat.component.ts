@@ -49,7 +49,6 @@ export class PageResultatComponent implements OnInit {
 
   cote: Cote;
 
-
   mapSettingsToggle: MapSettingsToggle = new MapSettingsToggle();
 
   constructor(

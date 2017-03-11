@@ -1,3 +1,4 @@
+import { MapSettingsToggle } from '../page-resultat/page-resultat.component';
 import { Component, OnInit, Input } from '@angular/core';
 
 import { SebmGoogleMap, SebmGoogleMapPolygon, LatLngLiteral } from 'angular2-google-maps/core';
@@ -25,44 +26,11 @@ export class GoogleMapsComponent implements OnInit {
   @Input() busLines: Ligne[] = [];
   @Input() metroLines: Ligne[] = [];
 
-  toggleMetro: boolean;
-  toggleBus: boolean;
-  toggleTrain: boolean;
-  toggleWalk: boolean;
-  toggleBike: boolean;
+  @Input() mapSettingsToggle: MapSettingsToggle;
 
   constructor() { }
 
   ngOnInit() {
-    this.initToggle();
-  }
-
-  onToggleBus(event) {
-    this.toggleBus = event.checked;
-  }
-
-  onToggleWalk(event) {
-    this.toggleWalk = event.checked;
-  }
-
-  onToggleTrain(event) {
-    this.toggleTrain = event.checked;
-  }
-
-  onToggleMetro(event) {
-    this.toggleMetro = event.checked;
-  }
-
-  onToggleBike(event) {
-    this.toggleBike = event.checked;
-  }
-
-  initToggle() {
-    this.toggleBus = true;
-    this.toggleBike = true;
-    this.toggleMetro = true;
-    this.toggleTrain = true;
-    this.toggleWalk = true;
   }
 
 }

@@ -9,6 +9,20 @@ import { AccesCibleService } from '../service/access-cible.service';
 
 import { LatLngLiteral } from 'angular2-google-maps/core';
 
+export class MapSettingsToggle {
+  toggleMetro: boolean;
+  toggleBus: boolean;
+  toggleWalk: boolean;
+  toggleBike: boolean;
+
+  constructor() {
+    this.toggleMetro = true;
+    this.toggleBus = true;
+    this.toggleBike = true;
+    this.toggleWalk = true;
+  }
+}
+
 
 @Component({
   selector: 'app-page-resultat',
@@ -21,7 +35,6 @@ export class PageResultatComponent implements OnInit {
 
   metroPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
   busPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
-  // trainPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
   walkPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
   bikePaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
 
@@ -29,7 +42,8 @@ export class PageResultatComponent implements OnInit {
 
   busLines: Ligne[] = [];
   metroLines: Ligne[] = [];
-  // trainLines: Ligne[] = [];
+
+  mapSettingsToggle: MapSettingsToggle = new MapSettingsToggle();
 
   constructor(
     private adressService: AdressService,
@@ -67,10 +81,6 @@ export class PageResultatComponent implements OnInit {
       this.metroLines.push(metroLine);
       }
     }
-
-    // for (let trainLine of result.train.ligne) {
-    //   this.trainLines.push(trainLine);
-    // }
   }
 
 }

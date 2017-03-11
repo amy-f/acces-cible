@@ -4,9 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import {DialogModule} from 'primeng/primeng';
-
-import { InputTextModule, ButtonModule, AutoCompleteModule } from 'primeng/primeng';
+import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
 import { InputSwitchModule } from 'primeng/primeng';
 
@@ -21,6 +19,7 @@ import { AdressService } from './util/adress.service';
 import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
 import { PageSettingsComponent } from './page-settings/page-settings.component';
+import { MapSettingsComponent } from './map-settings/map-settings.component';
 
 
 @NgModule({
@@ -30,7 +29,8 @@ import { PageSettingsComponent } from './page-settings/page-settings.component';
     ThePageComponent,
     PageResultatComponent,
     AutoCompleteAdressComponent,
-    PageSettingsComponent
+    PageSettingsComponent,
+    MapSettingsComponent
   ],
   imports: [
     RouterModule.forRoot([
@@ -50,7 +50,8 @@ import { PageSettingsComponent } from './page-settings/page-settings.component';
     FormsModule,
     ReactiveFormsModule,
     DialogModule,
-    InputSwitchModule
+    InputSwitchModule,
+    AccordionModule
   ],
   providers: [
     AdressService,

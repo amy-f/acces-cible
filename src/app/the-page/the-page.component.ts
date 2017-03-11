@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccesCibleService } from '../service/access-cible.service';
+import { Router } from '@angular/router';
+import
 
 @Component({
   selector: 'app-the-page',
@@ -11,14 +13,15 @@ export class ThePageComponent implements OnInit {
 
   adresse: string;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
-  onClickSearch () {
-    console.log("Jordane");
-    console.log(this.adresse);
+  onClickSearch() {
+    this.router.navigate(['/resultats'], { queryParams: { adress: this.adress } });
   }
 
 }

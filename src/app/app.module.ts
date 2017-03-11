@@ -10,6 +10,7 @@ import { ThePageComponent } from './the-page/the-page.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { MaterialModule } from '@angular/material';
+import { AccesCibleService } from './service/access-cible.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { MaterialModule } from '@angular/material';
       apiKey: 'AIzaSyAmdLnTfE2KzdRjmsyYtXjNer11yUgU3Ig'
     })
   ],
-  providers: [],
+  providers: [AccesCibleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

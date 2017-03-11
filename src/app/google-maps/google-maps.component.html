@@ -6,11 +6,11 @@
        </sebm-google-map-info-window>
   </sebm-google-map-marker>
 
-  <sebm-map-polygon [paths]="busPaths" fillColor="#ff5500" strokeColor="#aa4655" [editable]="true" [visible]="toggleBus"></sebm-map-polygon>
-  <sebm-map-polygon [paths]="walkPaths" fillColor="#82b1ff" strokeColor="#2659ad" [editable]="true" [visible]="toggleWalk"></sebm-map-polygon>
-  <sebm-map-polygon [paths]="metroPaths" fillColor="#fcd28d" strokeColor="#f4b042" [editable]="true" [visible]="toggleMetro"></sebm-map-polygon>
-  <sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [editable]="true" [visible]="toggleTrain"></sebm-map-polygon>
-  <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [editable]="true" [visible]="toggleBike"></sebm-map-polygon>
+  <sebm-map-polygon [paths]="busPaths" fillColor="#ff5500" strokeColor="#aa4655" [visible]="toggleBus"></sebm-map-polygon>
+  <sebm-map-polygon [paths]="walkPaths" fillColor="#82b1ff" strokeColor="#2659ad" [visible]="toggleWalk"></sebm-map-polygon>
+  <sebm-map-polygon [paths]="metroPaths" fillColor="#fcd28d" strokeColor="#f4b042" [visible]="toggleMetro"></sebm-map-polygon>
+  <sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [visible]="toggleTrain"></sebm-map-polygon>
+  <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [visible]="toggleBike"></sebm-map-polygon>
 
   <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" 
         [visible]="toggleBike" iconUrl="assets/velo-icon-small.png">

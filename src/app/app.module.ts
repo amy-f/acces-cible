@@ -4,15 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import { InputTextModule, ButtonModule } from 'primeng/primeng';
+import { MenuItem } from 'primeng/primeng';
+
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 import { AppComponent } from './app.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { ThePageComponent } from './the-page/the-page.component';
 import { PageResultatComponent } from './page-resultat/page-resultat.component';
 
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AdressService } from './util/adress.service';
 
-import { InputTextModule, ButtonModule } from 'primeng/primeng';
-import { MenuItem } from 'primeng/primeng';
+
+
 
 
 
@@ -39,7 +44,9 @@ import { MenuItem } from 'primeng/primeng';
     InputTextModule,
     ButtonModule
   ],
-  providers: [],
+  providers: [
+    AdressService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

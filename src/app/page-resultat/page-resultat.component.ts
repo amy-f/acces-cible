@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route } from '@angular/router';
+import { AdressService } from '../util/adress.service';
+
 
 @Component({
   selector: 'app-page-resultat',
@@ -9,15 +11,11 @@ import { Route } from '@angular/router';
 export class PageResultatComponent implements OnInit {
 
   constructor(
-    private route: Route
+    private adressService: AdressService
   ) { }
 
   ngOnInit() {
-    let sub = this.route.queryParams
-      .subscribe(params => {
-        // Defaults to 0 if no query param provided.
-        this.page = +params['page'] || 0;
-      });
+    console.log(this.adressService.adress);
   }
 
 }

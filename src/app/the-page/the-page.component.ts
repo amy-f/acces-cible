@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import
+import { AdressService } from '../util/adress.service';
 
 @Component({
   selector: 'app-the-page',
@@ -12,14 +12,16 @@ export class ThePageComponent implements OnInit {
   adress: string;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private adressService : AdressService
   ) { }
 
   ngOnInit() {
   }
 
   onClickSearch() {
-    this.router.navigate(['/resultats'], { queryParams: { adress: this.adress } });
+    this.adressService.adress = this.adress;
+    this.router.navigate(['/resultats']);
   }
 
 }

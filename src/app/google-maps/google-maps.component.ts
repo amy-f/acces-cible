@@ -14,7 +14,7 @@ export class GoogleMapsComponent implements OnInit {
 
   lat: number = 7.464655;
   lng: number = 42.5655;
-;
+
 
   paths: Array<LatLngLiteral>;
 

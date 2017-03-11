@@ -42,6 +42,7 @@ export class AccesCibleService {
 
     //METRO
 
+    result.metro = new TransportCom();
 
     let positionMetro: {lat: number, lng: number}[] = [];
     positionMetro.push({'lat':7.7854, 'lng': -42.9754});

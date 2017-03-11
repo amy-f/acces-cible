@@ -19,7 +19,7 @@ export class AccesCibleService {
     result.bus = new TransportCom();
     result.bus.ligne = [];
 
-  /*  let busStop = new Ligne();
+    let busStop = new Ligne();
     busStop.stop = {lat: 7.15654, lng: 42.5465};
     busStop.nom = 'ligne 45';
 
@@ -35,7 +35,7 @@ export class AccesCibleService {
     busStop.stop = {lat: 7.3256, lng: 42.3564};
     busStop.nom = 'ligne 12';
 
-    result.bus.ligne.push(busStop);*/
+    result.bus.ligne.push(busStop);
 
     result.bus.positionsPol = positionBus;
 
@@ -58,7 +58,7 @@ export class AccesCibleService {
 
     result.metro.ligne = [];
 
-   /* let metroStop = new Ligne();
+    let metroStop = new Ligne();
     metroStop.stop = {lat: 7.15645, lng: -42.854};
     metroStop.nom = 'Ligne bleu';
 
@@ -74,7 +74,7 @@ export class AccesCibleService {
     metroStop.stop = {lat: 7.344545, lng: -42.2545};
     metroStop.nom = 'ligne orange';
 
-    result.metro.ligne.push(metroStop);*/
+    result.metro.ligne.push(metroStop);
 
 
     //VELO

@@ -14,36 +14,55 @@ export class DisplayResultComponent implements OnInit {
 
   data: any;
 
+  options: any;
+
   constructor() {
-    this.data = {
-      labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
-      datasets: [
-        {
-          label: 'My First dataset',
-          backgroundColor: 'rgba(179,181,198,0.2)',
-          borderColor: 'rgba(179,181,198,1)',
-          pointBackgroundColor: 'rgba(179,181,198,1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(179,181,198,1)',
-          data: [65, 59, 90, 81, 56, 55, 40]
-        },
-        {
-          label: 'My Second dataset',
-          backgroundColor: 'rgba(255,99,132,0.2)',
-          borderColor: 'rgba(255,99,132,1)',
-          pointBackgroundColor: 'rgba(255,99,132,1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(255,99,132,1)',
-          data: [28, 48, 40, 19, 96, 27, 100]
-        }
-      ]
-    };
+
   }
 
   ngOnInit() {
+    this.data = {
+      labels: ['Bus', 'Velo', 'Metro'],
+      datasets: [
+        {
+          label: 'My First dataset',
+          backgroundColor: [
+            "rgba(255, 97, 131, 0.6)",
+            "rgba(74, 191, 191, 0.6)",
+            "rgba(255, 207, 87, 0.6)"
+            //"#E7E9ED",
+            //"#36A2EB"
+          ],
+          data: [this.cote.coteBus, this.cote.coteVelo, this.cote.coteMetro],
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  max: 100,
+                  min: 0,
+                  stepSize: 10
+                }
+              }]
+            }
+          }
+        }
+      ]
+    };
 
+    this.options = {
+      title: {
+        display: false,
+      },
+      legend: {
+        position: 'bottom'
+      },
+      scale: {
+        reverse: false,
+        ticks: {
+          beginAtZero: true
+        }
+      }
+    };
   }
 
 }

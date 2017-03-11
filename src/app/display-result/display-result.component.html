@@ -1,4 +1,10 @@
 <div>
-  {{cote?.coteGlobal}}
-  <p-chart type="radar" [data]="data"></p-chart>
+  <div class="container ui-g-12 ui-md-12 ui-lg-6">
+    <h1>{{cote?.coteGlobal}}</h1>
+  </div>
+
+  <div class="container ui-g-12 ui-md-6 ui-lg-6">
+    <p-chart type="polarArea" [data]="data" [options]="options"></p-chart>
+  </div>
+
 </div>

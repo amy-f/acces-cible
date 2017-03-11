@@ -1,18 +1,26 @@
-<div class="ui-g">
+<div class="container">
 
-  <app-map-settings class="map-settings"
-    [mapSettingsToggle]="mapSettingsToggle"></app-map-settings>
+  <div class="ui-g-12 fleche-retour">
+    <i class="fa fa-arrow-left" aria-hidden="true" (click)="onGoBack()"></i>
+  </div>
 
-  <app-google-maps class="gmap" 
-    [address]="address"
-    [metroPaths]="metroPaths"
-    [busPaths]="metroPaths"
-    [walkPaths]="walkPaths"
-    [bikePaths]="bikePaths"
-    [bikeStartPoints]="bikeStartPoints"
-    [busLines]="busLines"
-    [metroLines]="metroLines"
-    [mapSettingsToggle]="mapSettingsToggle">
-  </app-google-maps>
+  <div class="ui-g-12 adresse">
+    <h3>Adresse</h3>
+  </div>
+
+  <div class="ui-g-12 resultats">
+      <app-display-result [resultats]="undefined"></app-display-result>
+  </div>
+
+  <div class="ui-g-12 carte">
+    <p-panel header="Résultats" [toggleable]="true">
+      Content
+    </p-panel>
+    <app-map-settings class="map-settings" [mapSettingsToggle]="mapSettingsToggle"></app-map-settings>
+
+    <app-google-maps class="gmap" [address]="address" [metroPaths]="metroPaths" [busPaths]="metroPaths" [walkPaths]="walkPaths"
+      [bikePaths]="bikePaths" [bikeStartPoints]="bikeStartPoints" [busLines]="busLines" [metroLines]="metroLines" [mapSettingsToggle]="mapSettingsToggle">
+    </app-google-maps>
+  </div>
 
 </div>

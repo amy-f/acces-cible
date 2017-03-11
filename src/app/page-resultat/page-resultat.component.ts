@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Address } from '../models/address';
 import { Ligne } from '../models/result';
@@ -54,6 +55,7 @@ export class PageResultatComponent implements OnInit {
   constructor(
     private adressService: AdressService,
     private accesCibleService: AccesCibleService,
+    private router: Router,
     private noteService: NoteCalculatorService
   ) { }
 
@@ -81,15 +83,18 @@ export class PageResultatComponent implements OnInit {
 
     if (result.bus.ligne) {
       for (let busLine of result.bus.ligne) {
-          this.busLines.push(busLine);
-        }
+        this.busLines.push(busLine);
+      }
     }
 
     if (result.metro.ligne) {
       for (let metroLine of result.metro.ligne) {
-      this.metroLines.push(metroLine);
+        this.metroLines.push(metroLine);
       }
     }
   }
 
+  onGoBack() {
+    this.router.navigate(['/accueil']);
+  }
 }

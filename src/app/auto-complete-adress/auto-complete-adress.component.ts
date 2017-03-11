@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild, ElementRef, NgZone, Output, EventEmitter, Directive} from '@angular/core';
-import {FormControl, NgModel} from "@angular/forms";
+import { Component, OnInit, ViewChild, ElementRef, NgZone, Output, EventEmitter, Directive } from '@angular/core';
+import { FormControl, NgModel } from "@angular/forms";
 
 import { MapsAPILoader } from 'angular2-google-maps/core';
 
@@ -10,31 +10,31 @@ import { Address } from '../models/address'
   selector: '[Googleplace]',
   providers: [NgModel],
   host: {
-    '(input)' : 'onInputChange()'
+    '(input)': 'onInputChange()'
   }
 })
 export class GoogleplaceDirective {
 
   @Output() setAddress: EventEmitter<any> = new EventEmitter();
-  modelValue:any;
-  autocomplete:any;
-  private _el:HTMLInputElement;
+  modelValue: any;
+  autocomplete: any;
+  private _el: HTMLInputElement;
 
 
-  constructor(el: ElementRef,private model:NgModel) {
+  constructor(el: ElementRef, private model: NgModel) {
     this._el = el.nativeElement;
     this.modelValue = this.model;
     var input = this._el;
 
     this.autocomplete = new google.maps.places.Autocomplete(input, {});
-    google.maps.event.addListener(this.autocomplete, 'place_changed', ()=> {
+    google.maps.event.addListener(this.autocomplete, 'place_changed', () => {
       var place = this.autocomplete.getPlace();
       this.invokeEvent(place);
 
     });
   }
 
-  invokeEvent(place:Object) {
+  invokeEvent(place: Object) {
     this.setAddress.emit(place);
   }
 

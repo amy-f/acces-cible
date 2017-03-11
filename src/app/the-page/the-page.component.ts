@@ -36,12 +36,19 @@ export class ThePageComponent implements OnInit {
     let address: Address;
     address = new Address();
 
-    address.name = "FarFarAway";
-    address.latitude = 8.02454;
-    address.longitude = 43.45645;
+    let resultingAddress: any;
+    this.adressService.getAddress(this.adressString).subscribe(response => {
+      console.log(response);
+      resultingAddress = response;
+      this.adressService.address = resultingAddress;
+      this.router.navigate(['/resultats']);
+    });
 
-    this.adressService.address = address;
-    this.router.navigate(['/resultats']);
+    // address.name = "FarFarAway";
+    // address.latitude = 8.02454;
+    // address.longitude = 43.45645;
+
+    // this.adressService.address = resultingAddress;
   }
 
   onInputChange(event: any) {

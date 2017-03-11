@@ -43,6 +43,10 @@
     
 }
 
+.autocomplete-input {
+  width: 100%;
+}
+
 >>> span{
     width:100%!important;    
 }

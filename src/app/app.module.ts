@@ -16,7 +16,7 @@ import { ThePageComponent } from './the-page/the-page.component';
 import { PageResultatComponent } from './page-resultat/page-resultat.component';
 
 import { AdressService } from './util/adress.service';
-import { AutoCompleteAdressComponent, GoogleplaceDirective } from './auto-complete-adress/auto-complete-adress.component';
+import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
 import { NoteCalculatorService } from './service/note-calculator.service';
 import { PageSettingsComponent } from './page-settings/page-settings.component';
@@ -33,7 +33,7 @@ import {SliderModule} from "primeng/components/slider/slider";
     AutoCompleteAdressComponent,
     PageSettingsComponent,
     MapSettingsComponent,
-    GoogleplaceDirective,
+    // GoogleplaceDirective,
     PageSettingsComponent
   ],
   imports: [
@@ -45,7 +45,6 @@ import {SliderModule} from "primeng/components/slider/slider";
     BrowserModule,
     HttpModule,
     AgmCoreModule.forRoot({
-      libraries: ["places"],
       apiKey: 'AIzaSyAmdLnTfE2KzdRjmsyYtXjNer11yUgU3Ig'
     }),
     InputTextModule,

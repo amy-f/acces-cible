@@ -3,45 +3,45 @@ import {FormControl, NgModel} from "@angular/forms";
 
 import { MapsAPILoader } from 'angular2-google-maps/core';
 
-import { Address } from '../models/address'
+import { Address } from '../models/address';
 
 
-@Directive({
-  selector: '[Googleplace]',
-  providers: [NgModel],
-  host: {
-    '(input)' : 'onInputChange()'
-  }
-})
-export class GoogleplaceDirective {
+// @Directive({
+//   selector: '[Googleplace]',
+//   providers: [NgModel],
+//   host: {
+//     '(input)' : 'onInputChange()'
+//   }
+// })
+// export class GoogleplaceDirective {
 
-  @Output() setAddress: EventEmitter<any> = new EventEmitter();
-  modelValue:any;
-  autocomplete:any;
-  private _el:HTMLInputElement;
+//   @Output() setAddress: EventEmitter<any> = new EventEmitter();
+//   modelValue:any;
+//   autocomplete:any;
+//   private _el:HTMLInputElement;
 
 
-  constructor(el: ElementRef,private model:NgModel) {
-    this._el = el.nativeElement;
-    this.modelValue = this.model;
-    var input = this._el;
+//   constructor(el: ElementRef,private model:NgModel) {
+//     this._el = el.nativeElement;
+//     this.modelValue = this.model;
+//     var input = this._el;
 
-    this.autocomplete = new google.maps.places.Autocomplete(input, {});
-    google.maps.event.addListener(this.autocomplete, 'place_changed', ()=> {
-      var place = this.autocomplete.getPlace();
-      this.invokeEvent(place);
+//     this.autocomplete = new google.maps.places.Autocomplete(input, {});
+//     google.maps.event.addListener(this.autocomplete, 'place_changed', ()=> {
+//       var place = this.autocomplete.getPlace();
+//       this.invokeEvent(place);
 
-    });
-  }
+//     });
+//   }
 
-  invokeEvent(place:Object) {
-    this.setAddress.emit(place);
-  }
+//   invokeEvent(place:Object) {
+//     this.setAddress.emit(place);
+//   }
 
-  onInputChange() {
-    console.log(this.model);
-  }
-}
+//   onInputChange() {
+//     console.log(this.model);
+//   }
+// }
 
 @Component({
   selector: 'app-auto-complete-adress',
@@ -50,12 +50,47 @@ export class GoogleplaceDirective {
 })
 export class AutoCompleteAdressComponent {
 
+  public searchControl: FormControl;
+
+  address: Address = new Address();
+
+  // @ViewChild("search")
+  // public searchElementRef: ElementRef;
+
+  // constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
 
 
+  //   ngOnInit() {
 
-  constructor(
-  ) {
-  }
+  //   //create search FormControl
+  //   this.searchControl = new FormControl();
+
+  //   //load Places Autocomplete
+  //   this.mapsAPILoader.load().then(() => {
+  //     let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+  //       types: ["address"]
+  //     });
+  //     autocomplete.addListener("place_changed", () => {
+  //       this.ngZone.run(() => {
+  //         //get the place result
+  //         let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+  //         console.log(place);
+
+  //         //verify result
+  //         if (place.geometry === undefined || place.geometry === null) {
+  //           return;
+  //         }
+
+  //         //set latitude, longitude and zoom
+  //         this.address.latitude = place.geometry.location.lat();
+  //         this.address.longitude = place.geometry.location.lng();
+  //         this.address.name = this.searchControl.value;
+  //       });
+  //     });
+  //   });
+  // }
+
 
 
 }

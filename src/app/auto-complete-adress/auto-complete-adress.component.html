@@ -1,5 +1,3 @@
 <div class="form-group">
-  input
-  <input type="text" class="form-control" placeholder="Location" name="Location" [(ngModel)]="address" #LocationCtrl="ngModel"
-         Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
+  <input type="text" class="form-control" placeholder="Location" name="Location" #search [(ngModel)]="addressString">
 </div>

@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Result, TransportCom, Velo, Cote } from '../models/result';
+import {Observable, Subscriber} from 'rxjs/Rx';
+
 
 
 @Injectable()
 export class NoteCalculatorService {
+
+  observable: Observable<Cote>;
+  subscriber: Subscriber<Cote>;
 
   cote: Cote = new Cote();
 
@@ -26,13 +31,19 @@ export class NoteCalculatorService {
     },
   ];
 
-  totalCoeef: number;
+  totalCoeef: number = 182;
 
-  constructor() { }
+  constructor() {
+    this.observable = new Observable(subscriber => {
+      this.subscriber = subscriber;
+    });
+
+  }
 
   public getCoeff() {
     return this.coeff;
   }
+
 
   public setCoeff(coeff) {
     this.coeff = coeff;
@@ -43,14 +54,18 @@ export class NoteCalculatorService {
     }
   }
 
-  public computeNote(result: Result) {
+  //public
+
+  public computeNote(result: Result): Cote {
     this.computeBus(result.bus);
     this.computeMetro(result.metro);
     this.computeBike(result.velo);
 
-    this.cote.coteGlobal = (this.cote.coteVelo + this.cote.coteBus + this.cote.coteMetro) / this.totalCoeef;
+    this.cote.coteGlobal = (this.cote.coteVelo + this.cote.coteBus + this.cote.coteMetro) / this.totalCoeef * 100;
 
     console.log(this.cote);
+
+    return this.cote;
   }
 
   private computeBus(bus: TransportCom) {
@@ -81,5 +96,4 @@ export class NoteCalculatorService {
 
     this.cote.coteVelo = nbVelo / 3 * this.coeff[3].coef;
   }
-
 }

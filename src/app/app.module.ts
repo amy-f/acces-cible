@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { InputTextModule, ButtonModule } from 'primeng/primeng';
+import { InputTextModule, ButtonModule, AutoCompleteModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
 import { InputSwitchModule } from 'primeng/primeng';
 
@@ -16,6 +16,7 @@ import { ThePageComponent } from './the-page/the-page.component';
 import { PageResultatComponent } from './page-resultat/page-resultat.component';
 
 import { AdressService } from './util/adress.service';
+import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
 
 
@@ -24,7 +25,8 @@ import { AccesCibleService } from './service/access-cible.service';
     AppComponent,
     GoogleMapsComponent,
     ThePageComponent,
-    PageResultatComponent
+    PageResultatComponent,
+    AutoCompleteAdressComponent
   ],
   imports: [
     RouterModule.forRoot([
@@ -33,13 +35,16 @@ import { AccesCibleService } from './service/access-cible.service';
       { path: 'accueil', component: ThePageComponent },
     ]),
     BrowserModule,
-    FormsModule,
     HttpModule,
     AgmCoreModule.forRoot({
+      libraries: ["places"],
       apiKey: 'AIzaSyAmdLnTfE2KzdRjmsyYtXjNer11yUgU3Ig'
     }),
     InputTextModule,
     ButtonModule,
+    AutoCompleteModule,
+    FormsModule,
+    ReactiveFormsModule,
     InputSwitchModule
   ],
   providers: [

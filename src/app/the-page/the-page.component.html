@@ -1,6 +1,8 @@
 <div class="container">
   <div class="ui-g input-container">
-    <input type="text" size="30" [(ngModel)]="adress" pInputText [disabled]="disabled" />
+
+   <app-auto-complete-adress></app-auto-complete-adress>
+
   </div>
   <div class="ui-g button-container">
     <button type="button" (click)="onClickSearch()" pButton label="Rechercher"></button>

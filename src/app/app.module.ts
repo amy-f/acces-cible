@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule,PanelModule } from 'primeng/primeng';
-import { MenuItem } from 'primeng/primeng';
+import { MenuItem, ChartModule } from 'primeng/primeng';
 import { InputSwitchModule } from 'primeng/primeng';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -59,7 +59,8 @@ import { DisplayResultComponent } from './display-result/display-result.componen
     InputSwitchModule,
     AccordionModule,
     SliderModule,
-    PanelModule
+    PanelModule,
+    ChartModule
   ],
   providers: [
     AdressService,

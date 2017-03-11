@@ -9,14 +9,7 @@ export class TransportCom {
     lat: number;
     lng: number;
   }[];
-  ligne: {
-    stop: {
-      lat: number;
-      lng: number;
-    },
-    nom: string;
-    distance: number;
-  }[]
+  ligne: Ligne[];
 }
 
 export class Velo {
@@ -27,4 +20,11 @@ export class Velo {
   distance: number;
 }
 
-
+export class Ligne {
+  stop: {
+    lat: number;
+    lng: number;
+  };
+  nom: string;
+  distance: number;
+}

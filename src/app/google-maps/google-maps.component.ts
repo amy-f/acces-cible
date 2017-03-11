@@ -14,22 +14,75 @@ export class GoogleMapsComponent implements OnInit {
 
   paths: Array<LatLngLiteral>;
 
-  busPolygon: SebmGoogleMapPolygon;
-
   metroPaths: Array<LatLngLiteral>;
   busPaths: Array<LatLngLiteral>;
   trainPaths: Array<LatLngLiteral>;
   walkPaths: Array<LatLngLiteral>;
   bikePaths: Array<LatLngLiteral>;
 
-  busFillColor: 'rgb(255,0,0)';
-  walkFillColor: '#000000';
+  toggleMetro: boolean;
+  toggleBus: boolean;
+  toggleTrain: boolean;
+  toggleWalk: boolean;
+  toggleBike: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    this.initToggle();
+    this.initPaths();
+  }
 
-    this.busPaths = [
+  onToggleBus(event) {
+    this.toggleBus = event.checked;
+  }
+
+  onToggleWalk(event) {
+    this.toggleWalk = event.checked;
+  }
+
+  onToggleTrain(event) {
+    this.toggleTrain = event.checked;
+  }
+
+  onToggleMetro(event) {
+    this.toggleMetro = event.checked;
+  }
+
+  onToggleBike(event) {
+    this.toggleBike = event.checked;
+  }
+
+  findAddress() {
+
+  }
+
+  initToggle() {
+    this.toggleBus = true;
+    this.toggleBike = true;
+    this.toggleMetro = true;
+    this.toggleTrain = true;
+    this.toggleWalk = true;
+  }
+
+  initPaths() {
+        this.busPaths = [
+      { lat: 51.373858,  lng: 7.815982 },
+      { lat: 51.673858,  lng: 7.215982 },
+      { lat: 51.673858,  lng: 8.011111 },
+      { lat: 51.373858,  lng: 7.215982 },
+      { lat: 51.373858,  lng: 7.895982 }
+    ];
+
+    this.metroPaths = [
+      { lat: 51.373858,  lng: 7.815982 },
+      { lat: 51.673858,  lng: 7.215982 },
+      { lat: 51.673858,  lng: 8.011111 },
+      { lat: 51.373858,  lng: 7.215982 },
+      { lat: 51.373858,  lng: 7.895982 }
+    ];
+
+    this.bikePaths = [
       { lat: 51.373858,  lng: 7.815982 },
       { lat: 51.673858,  lng: 7.215982 },
       { lat: 51.673858,  lng: 8.011111 },
@@ -45,10 +98,13 @@ export class GoogleMapsComponent implements OnInit {
       { lat: 51.373858,  lng: 7.895982 }
     ];
 
-  }
-
-  initPathColors() {
-
+    this.trainPaths = [
+      { lat: 51.373858,  lng: 7.815982 },
+      { lat: 51.673858,  lng: 7.215982 },
+      { lat: 51.673858,  lng: 8.011111 },
+      { lat: 51.373858,  lng: 7.215982 },
+      { lat: 51.373858,  lng: 7.895982 }
+    ];
   }
 
 }

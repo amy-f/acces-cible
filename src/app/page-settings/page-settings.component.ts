@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+import { NoteCalculatorService } from '../service/note-calculator.service';
+
 @Component({
   selector: 'app-page-settings',
   templateUrl: './page-settings.component.html',
@@ -13,9 +15,14 @@ export class PageSettingsComponent implements OnInit {
   @Output()
   onClose = new EventEmitter<boolean>();
 
-  constructor() { }
+  coeff: any;
+
+  constructor(
+    private noteCalcultor: NoteCalculatorService
+  ) { }
 
   ngOnInit() {
+    this.coeff = this.noteCalcultor.getCoeff();
   }
 
   onCloseWindow() {

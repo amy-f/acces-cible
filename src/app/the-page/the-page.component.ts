@@ -16,6 +16,8 @@ export class ThePageComponent implements OnInit {
 
   adresse: any;
 
+  adressString: string;
+
   constructor(
     private router: Router,
     private adressService: AdressService,
@@ -40,6 +42,11 @@ export class ThePageComponent implements OnInit {
 
     this.adressService.address = address;
     this.router.navigate(['/resultats']);
+  }
+
+  onInputChange(event: any) {
+    this.adressString = event.value;
+    console.log(event.value);
   }
 
 }

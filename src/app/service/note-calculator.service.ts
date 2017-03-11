@@ -1,21 +1,55 @@
 import { Injectable } from '@angular/core';
+import { Result, TransportCom, Velo } from '../models/result';
+
 
 @Injectable()
 export class NoteCalculatorService {
 
-  coef = {
-    bus: 1,
-    metro: 1,
-    marche: 1,
-    velo: 1
-  }
+  coeff = [
+    {
+      nom: "bus",
+      coef: 50
+    },
+    {
+      nom: "metro",
+      coef: 60
+    },
+    {
+      nom: "marche",
+      coef: 30
+    },
+    {
+      nom: "velo",
+      coef: 42
+    },
+  ];
 
   constructor() { }
 
   public getCoeff() {
-    return {
+    return this.coeff;
+  }
 
-    }
+  public setCoeff(coeff) {
+    this.coeff = coeff;
+  }
+
+  public computeNote(result: Result) {
+    this.computeBus(result.bus);
+    this.computeMetro(result.metro);
+    this.computeBike(result.velo);
+  }
+
+  private computeBus(bus: TransportCom) {
+
+  }
+
+  private computeMetro(bus: TransportCom) {
+
+  }
+
+  private computeBike(bus: Velo[]) {
+
   }
 
 }

@@ -16,10 +16,12 @@ import { ThePageComponent } from './the-page/the-page.component';
 import { PageResultatComponent } from './page-resultat/page-resultat.component';
 
 import { AdressService } from './util/adress.service';
-import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
+import { AutoCompleteAdressComponent, GoogleplaceDirective } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
+import { NoteCalculatorService } from './service/note-calculator.service';
 import { PageSettingsComponent } from './page-settings/page-settings.component';
 import { MapSettingsComponent } from './map-settings/map-settings.component';
+import {SliderModule} from "primeng/components/slider/slider";
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { MapSettingsComponent } from './map-settings/map-settings.component';
     PageResultatComponent,
     AutoCompleteAdressComponent,
     PageSettingsComponent,
-    MapSettingsComponent
+    MapSettingsComponent,
+    GoogleplaceDirective,
+    PageSettingsComponent
   ],
   imports: [
     RouterModule.forRoot([
@@ -51,11 +55,13 @@ import { MapSettingsComponent } from './map-settings/map-settings.component';
     ReactiveFormsModule,
     DialogModule,
     InputSwitchModule,
-    AccordionModule
+    AccordionModule,
+    SliderModule
   ],
   providers: [
     AdressService,
-    AccesCibleService
+    AccesCibleService,
+    NoteCalculatorService
   ],
   bootstrap: [AppComponent]
 })

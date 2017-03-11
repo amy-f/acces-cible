@@ -31,9 +31,14 @@ export class AccesCibleService {
     let veloList: Velo[] = [];
 
     let velo = new Velo();
-    //velo.start = {'lat': 7.25645}, 'lng': 42.16654};
-
-
+    velo.start = {'lat': 7.25645, 'lng': 42.16654};
+    veloList.push(velo);
+    velo = new Velo();
+    velo.start = {'lat': 7.25645, 'lng': 42.16654};
+    veloList.push(velo);
+    velo = new Velo();
+    velo.start = {'lat': 7.25645, 'lng': 42.16654};
+    veloList.push(velo);
 
     return result;
   }

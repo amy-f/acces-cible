@@ -1,11 +1,27 @@
 <md-toolbar>
   <span>Acces-cible</span>
-
-  <md-toolbar-row>
-    <span>Second Row</span>
-  </md-toolbar-row>
-
-  <div> 
-    <app-google-maps></app-google-maps>  
-  </div>
 </md-toolbar>
+
+<md-grid-list cols="1">
+  <md-input-container>
+    <textarea mdInput [(ngModel)]="adresse" placeholder="Address"></textarea>
+  </md-input-container>
+</md-grid-list>
+
+<md-grid-list cols="1">
+  <button md-button (onClick)="onClickSearch()">Click me!</button>
+</md-grid-list>
+
+
+
+<md-grid-list cols="1">
+  Champ de configuration
+</md-grid-list>
+
+<md-grid-list cols="1">
+  Résultats
+</md-grid-list>
+
+<md-grid-list cols="1">
+  <app-google-maps></app-google-maps>
+</md-grid-list>

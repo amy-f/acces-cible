@@ -9,9 +9,16 @@ import { AccesCibleService } from '../service/access-cible.service';
 })
 export class ThePageComponent implements OnInit {
 
+  adresse: string;
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  onClickSearch () {
+    alert("this.adresse");
   }
 
 }

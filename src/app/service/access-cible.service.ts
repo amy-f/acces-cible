@@ -24,19 +24,58 @@ export class AccesCibleService {
     result.bus.ligne.push(busStop);
 
     busStop = new Ligne();
+    busStop.stop = {lat: 7.4165, lng: 42.1645};
+    busStop.nom = 'ligne 36';
+
+    result.bus.ligne.push(busStop);
+
+    busStop = new Ligne();
+    busStop.stop = {lat: 7.3256, lng: 42.3564};
+    busStop.nom = 'ligne 12';
+
+    result.bus.ligne.push(busStop);
 
     result.bus.positionsPol = positionBus;
 
+
+    //METRO
+
+
     let positionMetro: {lat: number, lng: number}[] = [];
-    positionMetro.push({'lat':7.7854, 'lng': 42.9754});
-    positionMetro.push({'lat':7.9543, 'lng': 42.78243});
-    positionMetro.push({'lat':8.024462, 'lng': 42.7543});
-    positionMetro.push({'lat':9.4545, 'lng': 42.78645});
-    positionMetro.push({'lat':7.5745, 'lng': 42.973543});
-    positionMetro.push({'lat':8.546786, 'lng': 43.56775});
+    positionMetro.push({'lat':7.7854, 'lng': -42.9754});
+    positionMetro.push({'lat':7.9543, 'lng': -42.78243});
+    positionMetro.push({'lat':8.024462, 'lng': -42.7543});
+    positionMetro.push({'lat':9.4545, 'lng': -42.78645});
+    positionMetro.push({'lat':7.5745, 'lng': -42.973543});
+    positionMetro.push({'lat':8.546786, 'lng': -43.56775});
+
+    result.metro.positionsPol = positionMetro;
 
     result.metro = new TransportCom();
     result.metro.positionsPol = positionMetro;
+
+    result.metro.ligne = [];
+
+    let metroStop = new Ligne();
+    metroStop.stop = {lat: 7.15645, lng: -42.854};
+    metroStop.nom = 'Ligne bleu';
+
+    result.metro.ligne.push(metroStop);
+
+    metroStop = new Ligne();
+    metroStop.stop = {lat: 7.4754, lng: -42.1025};
+    metroStop.nom = 'ligne verte';
+
+    result.metro.ligne.push(metroStop);
+
+    metroStop = new Ligne();
+    metroStop.stop = {lat: 7.344545, lng: -42.2545};
+    metroStop.nom = 'ligne orange';
+
+    result.metro.ligne.push(metroStop);
+
+
+    //VELO
 
     let veloList: Velo[] = [];
 

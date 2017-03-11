@@ -1,28 +1,8 @@
 <div class="ui-g">
-  Un beau titre de l'app
-</div>
-
-
-<div class="ui-g">
   <div class="ui-g-8">
-    <input type="text" size="30" pInputText [disabled]="disabled" />
+    <input type="text" size="30" [(ngModel)]="adress" pInputText [disabled]="disabled" />
   </div>
   <div class="ui-g-4">
-    <button type="button" (click)="toggleDisabled()" pButton label="Toggle"></button>
+    <button type="button" (click)="onClickSearch()" pButton label="Rechercher"></button>
   </div>
 </div>
-
-
-<div class="ui-g">
-  <app-google-maps class="gmap"></app-google-maps>
-</div>
-
-
-
-
-
-
-
-<!--
-
--->

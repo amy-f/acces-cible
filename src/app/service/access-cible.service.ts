@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import { Result, TransportCom } from '../models/result';
+import { Result, TransportCom, Velo } from '../models/result';
 
 @Injectable()
 export class AccesCibleService {
@@ -26,7 +26,14 @@ export class AccesCibleService {
     positionMetro.push({'lat':8.546786, 'lng': 43.56775});
 
     result.metro = new TransportCom();
-    result.bus.positionsPol = positionMetro;
+    result.metro.positionsPol = positionMetro;
+
+    let veloList: Velo[] = [];
+
+    let velo = new Velo();
+    //velo.start = {'lat': 7.25645}, 'lng': 42.16654};
+
+
 
     return result;
   }

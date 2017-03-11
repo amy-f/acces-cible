@@ -1,7 +1,7 @@
 export class Result {
     bus: TransportCom;
     metro: TransportCom;
-    velo: Velo;
+    velo: Velo[];
 }
 
 export class TransportCom {

@@ -13,25 +13,27 @@
     <!--<sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [visible]="toggleTrain"></sebm-map-polygon>-->
     <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [visible]="mapSettingsToggle.toggleBike"></sebm-map-polygon>
 
-    <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" 
+    <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng"
           [visible]="mapSettingsToggle.toggleBike" iconUrl="assets/velo-icon-small.png">
         </sebm-google-map-marker>
 
-    <sebm-google-map-marker *ngFor="let busLine of busLines" [latitude]="busLine.stop.lat" [longitude]="busLine.stop.lng" 
+    <sebm-google-map-marker *ngFor="let busLine of busLines" [latitude]="busLine.stop.lat" [longitude]="busLine.stop.lng"
           [visible]="mapSettingsToggle.toggleBus" iconUrl="assets/bus.png" title="busLine.nom">
           <sebm-google-map-info-window [disableAutoPan]="true">
-          {{ busLine.nom }}
-        </sebm-google-map-info-window>
+            Nom : {{ busLine.nom }}
+            Distance : {{busLine.distance}}
+          </sebm-google-map-info-window>
     </sebm-google-map-marker>
 
-    <sebm-google-map-marker *ngFor="let metroLine of metroLines" [latitude]="metroLine.stop.lat" [longitude]="metroLine.stop.lng" 
+    <sebm-google-map-marker *ngFor="let metroLine of metroLines" [latitude]="metroLine.stop.lat" [longitude]="metroLine.stop.lng"
           [visible]="mapSettingsToggle.toggleMetro" iconUrl="assets/metro.png" title="metroLine.nom">
           <sebm-google-map-info-window [disableAutoPan]="true">
-          {{ metroLine.nom }}
+            Nom : {{ metroLine.nom }}
+            Distance : {{metroLine.distance}}
         </sebm-google-map-info-window>
     </sebm-google-map-marker>
 
-      <!--<sebm-google-map-marker *ngFor="let trainLine of trainLines" [latitude]="trainLine.stop.lat" [longitude]="trainLine.stop.lng" 
+      <!--<sebm-google-map-marker *ngFor="let trainLine of trainLines" [latitude]="trainLine.stop.lat" [longitude]="trainLine.stop.lng"
             [visible]="toggleTrain" iconUrl="assets/train.png" title="trainLine.nom">
             <sebm-google-map-info-window [disableAutoPan]="true">
             {{ trainLine.nom }}

@@ -64,13 +64,21 @@ export class PageResultatComponent implements OnInit {
 
     this.address = this.adressService.address;
 
+    this.noteService.getObservable().subscribe(cote => {
+      this.cote = cote
+      console.log("cote" + cote);
+    }
+    );
+
     this.getPaths();
   }
 
   getPaths() {
-    const result = this.accesCibleService.getMock();
+    let result = this.accesCibleService.getMock();
 
-    this.cote = this.noteService.computeNote(result);
+    this.computeDistance(result);
+
+    this.noteService.setResult(result);
 
     this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
     this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
@@ -96,5 +104,32 @@ export class PageResultatComponent implements OnInit {
 
   onGoBack() {
     this.router.navigate(['/accueil']);
+  }
+
+  computeDistance(result: Result) {
+
+    for (let bus of result.bus.ligne) {
+      bus.distance = this.distance(bus.stop.lat, bus.stop.lng);
+    }
+    for (let metro of result.metro.ligne) {
+      metro.distance = this.distance(metro.stop.lat, metro.stop.lng);
+    }
+  }
+
+  public convertRad(input){
+    return (Math.PI * input)/180;
+  }
+
+  public distance(lat_b_degre, lon_b_degre): number{
+
+    let R = 6378000 //Rayon de la terre en mètre
+
+    let lat_a = this.convertRad(this.address.latitude);
+    let lon_a = this.convertRad(this.address.longitude);
+    let lat_b = this.convertRad(lat_b_degre);
+    let lon_b = this.convertRad(lon_b_degre);
+
+    let d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
+    return d;
   }
 }

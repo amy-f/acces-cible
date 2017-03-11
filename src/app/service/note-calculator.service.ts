@@ -65,13 +65,20 @@ export class NoteCalculatorService {
     }
   }
 
+  public setResult(result: Result){
+    this.result = result;
+    this.update();
+  }
+
+
+
   public computeNote(result: Result): Cote {
     this.result = result;
     this.computeBus(result.bus);
     this.computeMetro(result.metro);
     this.computeBike(result.velo);
 
-    this.cote.coteGlobal = (this.cote.coteVelo + this.cote.coteBus + this.cote.coteMetro) / this.totalCoeef * 100;
+    this.cote.coteGlobal = Math.round((this.cote.coteVelo + this.cote.coteBus + this.cote.coteMetro) / this.totalCoeef * 100);
 
     if(this.coeff[0].coef!= 0) {
       this.cote.coteBus = this.cote.coteBus / this.coeff[0].coef * 100;

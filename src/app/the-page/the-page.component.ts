@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccesCibleService } from '../service/access-cible.service';
 import { Router } from '@angular/router';
-import
 
 @Component({
   selector: 'app-the-page',
@@ -21,7 +20,7 @@ export class ThePageComponent implements OnInit {
   }
 
   onClickSearch() {
-    this.router.navigate(['/resultats'], { queryParams: { adress: this.adress } });
+    this.router.navigate(['/resultats'], { queryParams: { adress: this.adresse } });
   }
 
 }

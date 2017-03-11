@@ -8,7 +8,7 @@ export class AccesCibleService {
   getMock(): Result{
     let result: Result = new Result();
 
-    let positionBus: {lat: string, lng: string}[] = [];
+    let positionBus: {lat: number, lng: number}[] = [];
     position.push({'lat':7.464655, 'lng': 42.5655});
     position.push({'lat':7.464789, 'lng': 42.5681});
     position.push({'lat':7.464962, 'lng': 42.5560});

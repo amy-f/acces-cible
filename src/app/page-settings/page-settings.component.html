@@ -1,6 +1,22 @@
 <div class="container" [class.display]="display">
-  <i class="fa fa-arrow-left" aria-hidden="true" (click)="onCloseWindow()"></i>
 
-   <div class="ui-g"></div>
+  <i class="fa fa-arrow-left" aria-hidden="true" (click)="onCloseWindow()"></i>
+  <div class="ui-g-12">
+    <h2>Coefficients</h2>
+  </div>
+
+  <div class="container-coef">
+    <div *ngFor="let property of coeff" class="ui-g ligne">
+      <div class="ui-g-12">
+        <h3>{{property.nom}}</h3>
+      </div>
+      <div class="ui-g-12">
+        <span>{{property.coef}}</span>
+      </div>
+      <div class="ui-g-12">
+        <p-slider [(ngModel)]="property.coef"></p-slider>
+      </div>
+    </div>
+  </div>
 
 </div>

@@ -4,9 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import {DialogModule} from 'primeng/primeng';
+import { DialogModule } from 'primeng/primeng';
 
-import { InputTextModule, ButtonModule, AutoCompleteModule } from 'primeng/primeng';
+
+import { InputTextModule, ButtonModule, AutoCompleteModule, SliderModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
 import { InputSwitchModule } from 'primeng/primeng';
 
@@ -20,6 +21,7 @@ import { PageResultatComponent } from './page-resultat/page-resultat.component';
 import { AdressService } from './util/adress.service';
 import { AutoCompleteAdressComponent } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
+import { NoteCalculatorService } from './service/note-calculator.service';
 import { PageSettingsComponent } from './page-settings/page-settings.component';
 
 
@@ -50,11 +52,13 @@ import { PageSettingsComponent } from './page-settings/page-settings.component';
     FormsModule,
     ReactiveFormsModule,
     DialogModule,
-    InputSwitchModule
+    InputSwitchModule,
+    SliderModule
   ],
   providers: [
     AdressService,
-    AccesCibleService
+    AccesCibleService,
+    NoteCalculatorService
   ],
   bootstrap: [AppComponent]
 })

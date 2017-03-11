@@ -22,7 +22,9 @@ export class GoogleMapsComponent implements OnInit {
   busPaths: Array<LatLngLiteral>;
   trainPaths: Array<LatLngLiteral>;
   walkPaths: Array<LatLngLiteral>;
-  bikePaths: Array<LatLngLiteral>;
+
+  bikeStartPoints: Array<LatLngLiteral> = Array<LatLngLiteral>();
+  busStops: { lat: number, lng: number }[] = [];
 
   toggleMetro: boolean;
   toggleBus: boolean;
@@ -109,6 +111,16 @@ export class GoogleMapsComponent implements OnInit {
     const result = this.accesCibleService.getMock();
     this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
     this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
+
+    console.log(result);
+
+    for (let bikePoint of result.velo) {
+      console.log(bikePoint.start);
+        this.bikeStartPoints.push(bikePoint.start);
+      // todo: calculate distance at some point??
+    }
+
+    console.log(this.bikeStartPoints);
   }
 
 }

@@ -1,26 +1,54 @@
-<sebm-google-map [latitude]="lat" [longitude]="lng">
+<div *ngIf="address">
+  <sebm-google-map [latitude]="address.latitude" [longitude]="address.longitude">
 
-  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    <sebm-google-map-marker [latitude]="address.latitude" [longitude]="address.longitude">
+      <sebm-google-map-info-window [disableAutoPan]="true">
+          {{ address.name }}
+        </sebm-google-map-info-window>
+    </sebm-google-map-marker>
 
-  <sebm-map-polygon [paths]="busPaths" fillColor="#ff5500" strokeColor="#aa4655" [editable]="true" [visible]="toggleBus"></sebm-map-polygon>
-  <sebm-map-polygon [paths]="walkPaths" fillColor="#82b1ff" strokeColor="#2659ad" [editable]="true" [visible]="toggleWalk"></sebm-map-polygon>
-  <sebm-map-polygon [paths]="metroPaths" fillColor="#fcd28d" strokeColor="#f4b042" [editable]="true" [visible]="toggleMetro"></sebm-map-polygon>
-  <sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [editable]="true" [visible]="toggleTrain"></sebm-map-polygon>
+    <sebm-map-polygon [paths]="busPaths" fillColor="#ff5500" strokeColor="#aa4655" [visible]="toggleBus"></sebm-map-polygon>
+    <sebm-map-polygon [paths]="walkPaths" fillColor="#82b1ff" strokeColor="#2659ad" [visible]="toggleWalk"></sebm-map-polygon>
+    <sebm-map-polygon [paths]="metroPaths" fillColor="#fcd28d" strokeColor="#f4b042" [visible]="toggleMetro"></sebm-map-polygon>
+    <!--<sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [visible]="toggleTrain"></sebm-map-polygon>-->
+    <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [visible]="toggleBike"></sebm-map-polygon>
 
-  <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" 
-        [visible]="toggleBike" iconUrl="assets/velo-icon-small.png"></sebm-google-map-marker>
+    <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" 
+          [visible]="toggleBike" iconUrl="assets/velo-icon-small.png">
+        </sebm-google-map-marker>
 
-  <!--<sebm-google-map-marker *ngFor="let busStop of busStops" [latitude]="busStop.lat" [longitude]="busStop.lng" 
-        [visible]="toggleBus" iconUrl="assets/velo-icon.png" title="busStop."></sebm-google-map-marker>-->
-  
-  <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [editable]="true" [visible]="toggleBike"></sebm-map-polygon>
+    <sebm-google-map-marker *ngFor="let busLine of busLines" [latitude]="busLine.stop.lat" [longitude]="busLine.stop.lng" 
+          [visible]="toggleBus" iconUrl="assets/bus.png" title="busLine.nom">
+          <sebm-google-map-info-window [disableAutoPan]="true">
+          {{ busLine.nom }}
+        </sebm-google-map-info-window>
+    </sebm-google-map-marker>
 
-</sebm-google-map>
+    <sebm-google-map-marker *ngFor="let metroLine of metroLines" [latitude]="metroLine.stop.lat" [longitude]="metroLine.stop.lng" 
+          [visible]="toggleMetro" iconUrl="assets/metro.png" title="metroLine.nom">
+          <sebm-google-map-info-window [disableAutoPan]="true">
+          {{ metroLine.nom }}
+        </sebm-google-map-info-window>
+    </sebm-google-map-marker>
 
-<div class="toggle-polygons">
-  <p-inputSwitch (onChange)="onToggleBus($event)" [(ngModel)]="toggleBus"></p-inputSwitch> Bus
-  <p-inputSwitch (onChange)="onToggleWalk($event)" [(ngModel)]="toggleWalk"></p-inputSwitch> Marche
-  <p-inputSwitch (onChange)="onToggleMetro($event)" [(ngModel)]="toggleMetro"></p-inputSwitch> Métro
-  <p-inputSwitch (onChange)="onToggleTrain($event)" [(ngModel)]="toggleTrain"></p-inputSwitch> Train
-  <p-inputSwitch (onChange)="onToggleBike($event)" [(ngModel)]="toggleBike"></p-inputSwitch> Vélo
+      <!--<sebm-google-map-marker *ngFor="let trainLine of trainLines" [latitude]="trainLine.stop.lat" [longitude]="trainLine.stop.lng" 
+            [visible]="toggleTrain" iconUrl="assets/train.png" title="trainLine.nom">
+            <sebm-google-map-info-window [disableAutoPan]="true">
+            {{ trainLine.nom }}
+          </sebm-google-map-info-window>
+      </sebm-google-map-marker>-->
+
+  </sebm-google-map>
+
+  <div class="toggle-polygons">
+    <p-inputSwitch (onChange)="onToggleBus($event)" [(ngModel)]="toggleBus"></p-inputSwitch> Bus
+    <p-inputSwitch (onChange)="onToggleWalk($event)" [(ngModel)]="toggleWalk"></p-inputSwitch> Marche
+    <p-inputSwitch (onChange)="onToggleMetro($event)" [(ngModel)]="toggleMetro"></p-inputSwitch> Métro
+    <!--<p-inputSwitch (onChange)="onToggleTrain($event)" [(ngModel)]="toggleTrain"></p-inputSwitch> Train-->
+    <p-inputSwitch (onChange)="onToggleBike($event)" [(ngModel)]="toggleBike"></p-inputSwitch> Vélo
+  </div>
+</div>
+
+<div *ngIf="!address">
+  <p>L'addresse saisie est présentement introuvable :(</p>
 </div>

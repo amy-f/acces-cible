@@ -1,0 +1,79 @@
+.container {
+    background-color:white;
+    width:100%;
+    height:99vh;
+    position:fixed;
+    z-index: 100;
+    display:none;    
+    
+    
+    font-family: 'Roboto', "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.display {
+    display:inherit;
+}
+
+.fa-arrow-left {
+    font-size: 34px!important;
+    left: 18px;
+    top: 18px;
+    position: fixed;
+}
+
+.fa-arrow-left:hover {
+  color:red;
+  font-size: 40px!important;
+  left: 15px;
+  top: 15px;
+}
+
+.ligne {
+    margin-top: 10px;
+    width:100%;
+}
+
+.container-coef {
+    width: 80%;
+    height:80%;
+
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:10%;
+    margin-bottom:10%;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.ui-g-12 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top:4px;
+    padding-bottom:4px;
+}
+
+span {
+    margin-bottom:5px;
+}
+
+h3 {
+    margin-top:0px;
+    margin-bottom:0px;
+}

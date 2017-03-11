@@ -18,6 +18,8 @@ import { PageResultatComponent } from './page-resultat/page-resultat.component';
 import { AdressService } from './util/adress.service';
 import { AutoCompleteAdressComponent, GoogleplaceDirective } from './auto-complete-adress/auto-complete-adress.component';
 import { AccesCibleService } from './service/access-cible.service';
+import { NoteCalculatorService } from './service/note-calculator.service';
+import { PageSettingsComponent } from './page-settings/page-settings.component';
 
 
 @NgModule({
@@ -27,13 +29,14 @@ import { AccesCibleService } from './service/access-cible.service';
     ThePageComponent,
     PageResultatComponent,
     AutoCompleteAdressComponent,
-    GoogleplaceDirective
+    GoogleplaceDirective,
+    PageSettingsComponent
   ],
   imports: [
     RouterModule.forRoot([
       { path: '', redirectTo: '/accueil', pathMatch: 'full' },
       { path: 'resultats', component: PageResultatComponent },
-      { path: 'accueil', component: ThePageComponent },
+      { path: 'accueil', component: ThePageComponent }
     ]),
     BrowserModule,
     HttpModule,
@@ -46,11 +49,14 @@ import { AccesCibleService } from './service/access-cible.service';
     AutoCompleteModule,
     FormsModule,
     ReactiveFormsModule,
-    InputSwitchModule
+    DialogModule,
+    InputSwitchModule,
+    SliderModule
   ],
   providers: [
     AdressService,
-    AccesCibleService
+    AccesCibleService,
+    NoteCalculatorService
   ],
   bootstrap: [AppComponent]
 })

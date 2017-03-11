@@ -7,7 +7,8 @@
   <sebm-map-polygon [paths]="metroPaths" fillColor="#fcd28d" strokeColor="#f4b042" [editable]="true" [visible]="toggleMetro"></sebm-map-polygon>
   <sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [editable]="true" [visible]="toggleTrain"></sebm-map-polygon>
 
-  <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" [visible]="toggleBike"></sebm-google-map-marker>
+  <sebm-google-map-marker *ngFor="let bikeStart of bikeStartPoints" [latitude]="bikeStart.lat" [longitude]="bikeStart.lng" 
+        [visible]="toggleBike" iconUrl="assets/velo-icon.png"></sebm-google-map-marker>
   
   <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [editable]="true" [visible]="toggleBike"></sebm-map-polygon>
 

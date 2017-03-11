@@ -12,8 +12,9 @@ import { AccesCibleService } from '../service/access-cible.service';
 })
 export class GoogleMapsComponent implements OnInit {
 
-  lat: number = 51.673858;
-  lng: number = 7.815982;
+  lat: number = 7.464655;
+  lng: number = 42.5655;
+;
 
   paths: Array<LatLngLiteral>;
 
@@ -69,44 +70,45 @@ export class GoogleMapsComponent implements OnInit {
   }
 
   initPaths() {
-        this.getBusPaths();
+        this.getPaths();
 
-    this.metroPaths = [
-      { lat: 51.373858,  lng: 7.815982 },
-      { lat: 51.673858,  lng: 7.215982 },
-      { lat: 51.673858,  lng: 8.011111 },
-      { lat: 51.373858,  lng: 7.215982 },
-      { lat: 51.373858,  lng: 7.895982 }
-    ];
+    // this.metroPaths = [
+    //   { lat: 51.373858,  lng: 7.815982 },
+    //   { lat: 51.673858,  lng: 7.215982 },
+    //   { lat: 51.673858,  lng: 8.011111 },
+    //   { lat: 51.373858,  lng: 7.215982 },
+    //   { lat: 51.373858,  lng: 7.895982 }
+    // ];
 
-    this.bikePaths = [
-      { lat: 51.373858,  lng: 7.815982 },
-      { lat: 51.673858,  lng: 7.215982 },
-      { lat: 51.673858,  lng: 8.011111 },
-      { lat: 51.373858,  lng: 7.215982 },
-      { lat: 51.373858,  lng: 7.895982 }
-    ];
+    // this.bikePaths = [
+    //   { lat: 51.373858,  lng: 7.815982 },
+    //   { lat: 51.673858,  lng: 7.215982 },
+    //   { lat: 51.673858,  lng: 8.011111 },
+    //   { lat: 51.373858,  lng: 7.215982 },
+    //   { lat: 51.373858,  lng: 7.895982 }
+    // ];
 
-    this.walkPaths = [
-      { lat: 51.373858,  lng: 7.815982 },
-      { lat: 51.673858,  lng: 7.215982 },
-      { lat: 51.673858,  lng: 8.011111 },
-      { lat: 51.373858,  lng: 7.215982 },
-      { lat: 51.373858,  lng: 7.895982 }
-    ];
+    // this.walkPaths = [
+    //   { lat: 51.373858,  lng: 7.815982 },
+    //   { lat: 51.673858,  lng: 7.215982 },
+    //   { lat: 51.673858,  lng: 8.011111 },
+    //   { lat: 51.373858,  lng: 7.215982 },
+    //   { lat: 51.373858,  lng: 7.895982 }
+    // ];
 
-    this.trainPaths = [
-      { lat: 51.373858,  lng: 7.815982 },
-      { lat: 51.673858,  lng: 7.215982 },
-      { lat: 51.673858,  lng: 8.011111 },
-      { lat: 51.373858,  lng: 7.215982 },
-      { lat: 51.373858,  lng: 7.895982 }
-    ];
+    // this.trainPaths = [
+    //   { lat: 51.373858,  lng: 7.815982 },
+    //   { lat: 51.673858,  lng: 7.215982 },
+    //   { lat: 51.673858,  lng: 8.011111 },
+    //   { lat: 51.373858,  lng: 7.215982 },
+    //   { lat: 51.373858,  lng: 7.895982 }
+    // ];
   }
 
-  getBusPaths() {
-    let result = this.accesCibleService.getMock();
-
+  getPaths() {
+    const result = this.accesCibleService.getMock();
+    this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
+    this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
   }
 
 }

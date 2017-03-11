@@ -20,6 +20,8 @@ import { AutoCompleteAdressComponent, GoogleplaceDirective } from './auto-comple
 import { AccesCibleService } from './service/access-cible.service';
 import { NoteCalculatorService } from './service/note-calculator.service';
 import { PageSettingsComponent } from './page-settings/page-settings.component';
+import {SliderModule} from "primeng/components/slider/slider";
+import {DialogModule} from "primeng/components/dialog/dialog";
 
 
 @NgModule({

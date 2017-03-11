@@ -11,6 +11,7 @@ export class NoteCalculatorService {
   subscriber: Subscriber<Cote>;
 
   cote: Cote = new Cote();
+  result:Result;
 
   coeff = [
     {
@@ -54,14 +55,33 @@ export class NoteCalculatorService {
     }
   }
 
-  //public
+  public getObservable(): Observable<Cote>{
+    return this.observable;
+  }
+
+  public update () {
+    if(this.result) {
+      this.subscriber.next(this.computeNote(this.result));
+    }
+  }
 
   public computeNote(result: Result): Cote {
+    this.result = result;
     this.computeBus(result.bus);
     this.computeMetro(result.metro);
     this.computeBike(result.velo);
 
     this.cote.coteGlobal = (this.cote.coteVelo + this.cote.coteBus + this.cote.coteMetro) / this.totalCoeef * 100;
+
+    if(this.coeff[0].coef!= 0) {
+      this.cote.coteBus = this.cote.coteBus / this.coeff[0].coef * 100;
+    }
+    if(this.coeff[1].coef!= 0) {
+      this.cote.coteMetro = this.cote.coteBus / this.coeff[1].coef * 100;
+    }
+    if(this.coeff[3].coef!= 0) {
+      this.cote.coteVelo = this.cote.coteBus / this.coeff[3].coef * 100;
+    }
 
     console.log(this.cote);
 
@@ -73,8 +93,9 @@ export class NoteCalculatorService {
      if(nbBusStop > 10) {
        nbBusStop = 10;
      }
-
-     this.cote.coteBus = nbBusStop / 10 * this.coeff[0].coef;
+    if(this.coeff[0].coef!= 0) {
+      this.cote.coteBus = nbBusStop / 10 * this.coeff[0].coef;
+    }
   }
 
   private computeMetro(metro: TransportCom) {
@@ -83,8 +104,9 @@ export class NoteCalculatorService {
     if( nbMetroStop > 3) {
       nbMetroStop = 3;
     }
-
-    this.cote.coteMetro = nbMetroStop / 3 * this.coeff[1].coef;
+    if(this.coeff[1].coef!= 0) {
+      this.cote.coteMetro = nbMetroStop / 3 * this.coeff[1].coef;
+    }
   }
 
   private computeBike(velo: Velo[]) {
@@ -93,7 +115,8 @@ export class NoteCalculatorService {
     if (nbVelo > 3) {
       nbVelo = 3;
     }
-
-    this.cote.coteVelo = nbVelo / 3 * this.coeff[3].coef;
+    if(this.coeff[3].coef!= 0) {
+      this.cote.coteVelo = nbVelo / 3 * this.coeff[3].coef;
+    }
   }
 }

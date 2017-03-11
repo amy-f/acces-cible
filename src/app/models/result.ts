@@ -6,13 +6,13 @@ export class Result {
 
 export class TransportCom {
   positionsPol : {
-    lat: string;
-    lng: string;
+    lat: number;
+    lng: number;
   }[];
   ligne: {
     stop: {
-      lat: string;
-      lng: string;
+      lat: number;
+      lng: number;
     },
     nom: string;
     distance: number;
@@ -21,8 +21,8 @@ export class TransportCom {
 
 export class Velo {
   start: {
-    lat: string;
-    lng: string;
+    lat: number;
+    lng: number;
   };
   distance: number;
 }

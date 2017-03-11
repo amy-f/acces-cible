@@ -14,7 +14,7 @@ export class GoogleMapsComponent implements OnInit {
 
   lat: number = 7.464655;
   lng: number = 42.5655;
-
+;
 
   paths: Array<LatLngLiteral>;
 
@@ -24,7 +24,7 @@ export class GoogleMapsComponent implements OnInit {
   walkPaths: Array<LatLngLiteral>;
 
   bikeStartPoints: Array<LatLngLiteral> = Array<LatLngLiteral>();
-  busStops: { lat: number, lng: number }[] = [];
+  busStops: Array<LatLngLiteral> = Array<LatLngLiteral>();
 
   toggleMetro: boolean;
   toggleBus: boolean;

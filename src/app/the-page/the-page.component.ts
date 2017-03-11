@@ -31,6 +31,14 @@ export class ThePageComponent implements OnInit {
   onClickSearch() {
     //this.adressService.adress = this.adresse;
     //Récupérer l'adresse du composant
+    let address: Address;
+    address = new Address();
+
+    address.name = "FarFarAway";
+    address.latitude = 8.02454;
+    address.longitude = 43.45645;
+
+    this.adressService.address = address;
     this.router.navigate(['/resultats']);
   }
 

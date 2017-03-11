@@ -1,13 +1,7 @@
 export class Result {
     bus: TransportCom;
     metro: TransportCom;
-    velo: {
-      start: {
-        lat: string;
-        lng: string;
-      },
-      distance: number;
-    }
+    velo: Velo;
 }
 
 export class TransportCom {
@@ -26,7 +20,11 @@ export class TransportCom {
 }
 
 export class Velo {
-
+  start: {
+    lat: string;
+    lng: string;
+  };
+  distance: number;
 }
 
 

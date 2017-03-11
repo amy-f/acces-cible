@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
+import { ThePageComponent } from './pages/the-page/the-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoogleMapsComponent
+    GoogleMapsComponent,
+    ThePageComponent
   ],
   imports: [
     BrowserModule,

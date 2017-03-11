@@ -6,13 +6,13 @@ export class Cote {
 }
 
 export class Result {
-    bus: TransportCom;
-    metro: TransportCom;
-    velo: Velo[];
+  bus: TransportCom;
+  metro: TransportCom;
+  velo: Velo[];
 }
 
 export class TransportCom {
-  positionsPol : {
+  positionsPol: {
     lat: number;
     lng: number;
   }[];

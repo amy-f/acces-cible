@@ -22,6 +22,7 @@ import { NoteCalculatorService } from './service/note-calculator.service';
 import { PageSettingsComponent } from './page-settings/page-settings.component';
 import { MapSettingsComponent } from './map-settings/map-settings.component';
 import {SliderModule} from "primeng/components/slider/slider";
+import { DisplayResultComponent } from './display-result/display-result.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {SliderModule} from "primeng/components/slider/slider";
     PageSettingsComponent,
     MapSettingsComponent,
     GoogleplaceDirective,
-    PageSettingsComponent
+    PageSettingsComponent,
+    DisplayResultComponent
   ],
   imports: [
     RouterModule.forRoot([

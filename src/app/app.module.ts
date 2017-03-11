@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InputTextModule, ButtonModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
+import { InputSwitchModule } from 'primeng/primeng';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
@@ -42,7 +43,8 @@ import { AdressService } from './util/adress.service';
       apiKey: 'AIzaSyAmdLnTfE2KzdRjmsyYtXjNer11yUgU3Ig'
     }),
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    InputSwitchModule
   ],
   providers: [
     AdressService

@@ -77,10 +77,10 @@ export class NoteCalculatorService {
       this.cote.coteBus = this.cote.coteBus / this.coeff[0].coef * 100;
     }
     if(this.coeff[1].coef!= 0) {
-      this.cote.coteMetro = this.cote.coteBus / this.coeff[1].coef * 100;
+      this.cote.coteMetro = this.cote.coteMetro / this.coeff[1].coef * 100;
     }
     if(this.coeff[3].coef!= 0) {
-      this.cote.coteVelo = this.cote.coteBus / this.coeff[3].coef * 100;
+      this.cote.coteVelo = this.cote.coteVelo / this.coeff[3].coef * 100;
     }
 
     console.log(this.cote);

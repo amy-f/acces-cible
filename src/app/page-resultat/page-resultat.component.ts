@@ -21,7 +21,7 @@ export class PageResultatComponent implements OnInit {
 
   metroPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
   busPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
-  trainPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
+  // trainPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
   walkPaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
   bikePaths: Array<LatLngLiteral> = Array<LatLngLiteral>();
 
@@ -29,6 +29,7 @@ export class PageResultatComponent implements OnInit {
 
   busLines: Ligne[] = [];
   metroLines: Ligne[] = [];
+  // trainLines: Ligne[] = [];
 
   constructor(
     private adressService: AdressService,
@@ -49,17 +50,27 @@ export class PageResultatComponent implements OnInit {
     this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
     this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
 
-    for (let bikePoint of result.velo) {
+    if (result.velo) {
+      for (let bikePoint of result.velo) {
         this.bikeStartPoints.push(bikePoint.start);
+      }
     }
 
-    for (let busLine of result.bus.ligne) {
-      this.busLines.push(busLine);
+    if (result.bus.ligne) {
+      for (let busLine of result.bus.ligne) {
+          this.busLines.push(busLine);
+        }
     }
 
-    for (let metroLine of result.metro.ligne) {
+    if (result.metro.ligne) {
+      for (let metroLine of result.metro.ligne) {
       this.metroLines.push(metroLine);
+      }
     }
+
+    // for (let trainLine of result.train.ligne) {
+    //   this.trainLines.push(trainLine);
+    // }
   }
 
 }

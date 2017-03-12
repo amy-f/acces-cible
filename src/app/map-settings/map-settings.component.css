@@ -76,6 +76,10 @@
     align-self: stretch;
 }
 
+.ui-inputswitch-on {
+  background-color:rgb(107,148,32)!important;
+}
+
 span {
   font-size: 20px;
 }
@@ -87,4 +91,14 @@ span {
 >>> h1,h2,h3,p,span {
   font-family: 'Roboto', sans-serif;
   color:rgb(66,66,66);
+}
+
+@media only screen and (max-width: 850px) {
+    .chariot-de-reglage  {
+        height: 60px;
+    }
+
+  .toogle-container{
+    width:80%;
+  }
 }

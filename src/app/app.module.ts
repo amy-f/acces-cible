@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule, PanelModule } from 'primeng/primeng';
+import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule, PanelModule, GrowlModule } from 'primeng/primeng';
 import { MenuItem, ChartModule } from 'primeng/primeng';
 import {CountUpModule} from 'countup/countUp.module';
 import { InputSwitchModule } from 'primeng/primeng';
@@ -62,7 +62,8 @@ import { DisplayResultComponent } from './display-result/display-result.componen
     PanelModule,
     ChartModule,
     FieldsetModule,
-    CountUpModule
+    CountUpModule,
+    GrowlModule
   ],
   providers: [
     AdressService,

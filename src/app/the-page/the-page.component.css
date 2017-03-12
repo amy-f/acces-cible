@@ -158,6 +158,24 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+    .tagline {
+        font-size: 10pt;
+    }
+
+    .input-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px !important;
+    width: 34px;
+    margin-top: 5px;
+    background-color: #6a950f;
+    border: none;
+}
+
+}
+
 /*>>> span{
     width:100%!important;    
 }

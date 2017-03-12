@@ -6,6 +6,8 @@ import { AdressService } from '../util/adress.service';
 
 import { Address } from '../models/address';
 
+import {Message} from 'primeng/primeng';
+
 
 @Component({
   selector: 'app-the-page',
@@ -17,6 +19,8 @@ export class ThePageComponent implements OnInit {
   adresse: any;
 
   adressString: string;
+
+  msgs: Message[] = [];
 
   constructor(
     private router: Router,
@@ -36,13 +40,17 @@ export class ThePageComponent implements OnInit {
     let address: Address;
     address = new Address();
 
-    let resultingAddress: any;
-    this.adressService.getAddress(this.adressString).subscribe(response => {
-      console.log(response);
-      resultingAddress = response;
-      this.adressService.address = resultingAddress;
-      this.router.navigate(['/resultats']);
-    });
+    if (this.adressString === undefined) {
+      this.msgs.push({severity:'error', summary:'Adresse invalide', detail:'Veuillez saisir une adresse'});
+    } else {
+       let resultingAddress: any;
+      this.adressService.getAddress(this.adressString).subscribe(response => {
+        console.log(response);
+        resultingAddress = response;
+        this.adressService.address = resultingAddress;
+        this.router.navigate(['/resultats']);
+      });
+    }
   }
 
   onInputChange(event: any) {

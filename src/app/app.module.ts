@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule,PanelModule } from 'primeng/primeng';
 import { MenuItem, ChartModule } from 'primeng/primeng';
+import {CountUpModule} from 'countup.js/dist/countUp.module';
 import { InputSwitchModule } from 'primeng/primeng';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -58,7 +59,8 @@ import { DisplayResultComponent } from './display-result/display-result.componen
     AccordionModule,
     SliderModule,
     PanelModule,
-    ChartModule
+    ChartModule,
+    CountUpModule
   ],
   providers: [
     AdressService,

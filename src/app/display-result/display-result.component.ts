@@ -57,8 +57,9 @@ export class DisplayResultComponent implements OnInit {
           label: 'My First dataset',
           backgroundColor: [
             "rgba(255, 97, 131, 0.6)",
+            "rgba(255, 207, 87, 0.6)",
             "rgba(74, 191, 191, 0.6)",
-            "rgba(255, 207, 87, 0.6)"
+
             //"#E7E9ED",
             //"#36A2EB"
           ],

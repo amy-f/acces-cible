@@ -74,7 +74,7 @@ export class PageResultatComponent implements OnInit {
 
   getPaths() {
     let result = this.accesCibleService.getHttp(this.address.latitude, this.address.longitude).subscribe(
-      res => this.compute(res as Result)
+      res => this.compute(res.json())
     );
   }
 

@@ -11,7 +11,7 @@ export class AccesCibleService {
   constructor (private http: Http) {}
 
   getHttp(lat, lng): Observable<Result> {
-    return this.http.get(this.heroesUrl+'/'+ lat + '/' + lng)
+    return this.http.get(this.heroesUrl+'/'+ lat + '/' + lng).map(res => res.json())
     .catch(this.handleError);
   }
 

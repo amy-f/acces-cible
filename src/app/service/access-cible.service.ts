@@ -6,7 +6,7 @@ import {Result, TransportCom, Velo, Ligne} from '../models/result';
 @Injectable()
 export class AccesCibleService {
 
-  private heroesUrl = 'app/heroes'
+  private heroesUrl = 'localhost:1337/superGoodUrl'
 
   constructor (private http: Http) {}
 

@@ -4,12 +4,12 @@
     <div class="container-note">
       <!-- Beau compteur https://github.com/inorganik/countUp.js/ -->
 
-      
-      <div class="text">{{cote?.coteGlobal}} <span class="pourcent">% </span><br>
+
+      <div class="text"><span countUp="{useEasing: false}" [startVal]="0" [endVal]="cote.coteGlobal" [reanimateOnClick]="false"></span> <span class="pourcent">% </span><br>
         <p>d'accébilité</p>
       </div>
 
-      <h1 countUp="{useEasing: false}" [startVal]="0" [endVal]="cote.coteGlobal" [reanimateOnClick]="false"></h1>
+
     </div>
   </div>
 

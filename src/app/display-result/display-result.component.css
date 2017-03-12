@@ -46,8 +46,6 @@
     width:50%;
 }
 
-
-
 .container-note {
     height: 100%; 
     width:100%;
@@ -57,8 +55,15 @@
 }
 
 .text{
+    width:50%;
+    font-size: 46px;
+    text-align: left;
+}
+
+.valeur {
+    width:50%;
     font-size: 130px;
-    text-align: center;
+    text-align:right;
 }
 
 .pourcent {

@@ -39,7 +39,7 @@ export class DisplayResultComponent implements OnInit {
             scales: {
               yAxes: [{
                 ticks: {
-                  max: 100,
+                  max: 120,
                   min: 0,
                   stepSize: 10
                 }

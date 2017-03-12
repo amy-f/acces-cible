@@ -4,17 +4,22 @@
     <div class="container-note">
       <!-- Beau compteur https://github.com/inorganik/countUp.js/ -->
 
-      
-      <div class="text">{{cote?.coteGlobal}} <span class="pourcent">% </span><br>
-        <p>d'accébilité</p>
+      <div class="valeur">
+        <span countUp="{useEasing: false}" [startVal]="0" [endVal]="cote.coteGlobal" [duration]="10" [reanimateOnClick]="false"></span>
       </div>
 
-      <h1 countUp="{useEasing: false}" [startVal]="0" [endVal]="cote.coteGlobal" [reanimateOnClick]="false"></h1>
+      <div class="text">
+        <span class="pourcent">% </span>
+        <br>
+        <span>d'accessibilité</span>
+      </div>
+
     </div>
   </div>
 
   <div class="flex-item">
-    <p-chart type="polarArea" [data]="data" [options]="options"></p-chart>
+    <p-chart #chart type="polarArea" [data]="data" [options]="options"></p-chart>
+    <button type="button" pButton (click)="chart.refresh()"></button>
   </div>
 
 </div>

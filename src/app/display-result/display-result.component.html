@@ -1,9 +1,10 @@
-<div>
-  <div class="container ui-g-12 ui-md-12 ui-lg-6">
+<div class="flex-container">
+
+  <div class="flex-item">
     <h1>{{cote?.coteGlobal}}</h1>
   </div>
 
-  <div class="container ui-g-12 ui-md-6 ui-lg-6">
+  <div class="flex-item">
     <p-chart type="polarArea" [data]="data" [options]="options"></p-chart>
   </div>
 

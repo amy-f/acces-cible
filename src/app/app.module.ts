@@ -34,14 +34,8 @@ import { DisplayResultComponent } from './display-result/display-result.componen
     AutoCompleteAdressComponent,
     PageSettingsComponent,
     MapSettingsComponent,
-<<<<<<< HEAD
-    // GoogleplaceDirective,
-    PageSettingsComponent
-=======
-    GoogleplaceDirective,
     PageSettingsComponent,
     DisplayResultComponent
->>>>>>> a8f078886002eace30ecdf6c9c9528c1348ae0b9
   ],
   imports: [
     RouterModule.forRoot([

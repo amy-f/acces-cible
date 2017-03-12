@@ -44,19 +44,19 @@ export class AccesCibleService {
     result.bus.ligne = [];
 
     let busStop = new Ligne();
-    busStop.stop = {lat: 7.15654, lng: 42.5465};
+    busStop.stop = {lat: 8.02454, lng: 42.1465};
     busStop.nom = 'ligne 45';
 
     result.bus.ligne.push(busStop);
 
     busStop = new Ligne();
-    busStop.stop = {lat: 7.4165, lng: 42.1645};
+    busStop.stop = {lat: 7.7165, lng: 42.1645};
     busStop.nom = 'ligne 36';
 
     result.bus.ligne.push(busStop);
 
     busStop = new Ligne();
-    busStop.stop = {lat: 7.3256, lng: 42.3564};
+    busStop.stop = {lat: 7.7256, lng: 42.2564};
     busStop.nom = 'ligne 12';
 
     result.bus.ligne.push(busStop);
@@ -69,12 +69,12 @@ export class AccesCibleService {
     result.metro = new TransportCom();
 
     let positionMetro: {lat: number, lng: number}[] = [];
-    positionMetro.push({'lat':7.7854, 'lng': 42.9754});
+    positionMetro.push({'lat':7.7854, 'lng': 42.4754});
     positionMetro.push({'lat':7.9543, 'lng': 42.78243});
     positionMetro.push({'lat':8.024462, 'lng': 42.7543});
-    positionMetro.push({'lat':9.4545, 'lng': 42.78645});
+    positionMetro.push({'lat':7.4545, 'lng': 42.78645});
     positionMetro.push({'lat':7.5745, 'lng': 42.973543});
-    positionMetro.push({'lat':8.546786, 'lng': 43.56775});
+    positionMetro.push({'lat':7.546786, 'lng': 42.56775});
 
     result.metro.positionsPol = positionMetro;
 
@@ -84,7 +84,7 @@ export class AccesCibleService {
     result.metro.ligne = [];
 
     let metroStop = new Ligne();
-    metroStop.stop = {lat: 7.15645, lng: 42.854};
+    metroStop.stop = {lat: 7.15645, lng: 42.554};
     metroStop.nom = 'Ligne bleu';
 
     result.metro.ligne.push(metroStop);

@@ -1,5 +1,6 @@
 <div *ngIf="address">
-  <sebm-google-map [latitude]="address.latitude" [longitude]="address.longitude">
+  {{address.latitude}} / {{address.longitude}}
+  <sebm-google-map [latitude]="address.latitude" [longitude]="address.longitude" [zoom]="12">
 
     <sebm-google-map-marker [latitude]="address.latitude" [longitude]="address.longitude">
       <sebm-google-map-info-window [disableAutoPan]="true">
@@ -21,7 +22,8 @@
           [visible]="mapSettingsToggle.toggleBus" iconUrl="assets/bus.png" title="busLine.nom">
           <sebm-google-map-info-window [disableAutoPan]="true">
             Nom : {{ busLine.nom }}
-            Distance : {{busLine.distance}}
+            <br>
+            Temps : {{busLine.distance}} minutes
           </sebm-google-map-info-window>
     </sebm-google-map-marker>
 
@@ -29,7 +31,8 @@
           [visible]="mapSettingsToggle.toggleMetro" iconUrl="assets/metro.png" title="metroLine.nom">
           <sebm-google-map-info-window [disableAutoPan]="true">
             Nom : {{ metroLine.nom }}
-            Distance : {{metroLine.distance}}
+            <br>
+            Temps : {{metroLine.distance}} minutes
         </sebm-google-map-info-window>
     </sebm-google-map-marker>
 

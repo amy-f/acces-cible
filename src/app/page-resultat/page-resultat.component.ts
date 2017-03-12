@@ -129,6 +129,6 @@ export class PageResultatComponent implements OnInit {
     let lon_b = this.convertRad(lon_b_degre);
 
     let d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
-    return d;
+    return Math.round(d / (1.3888888 * 60));
   }
 }

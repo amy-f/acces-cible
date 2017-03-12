@@ -83,9 +83,10 @@ export class PageResultatComponent implements OnInit {
     this.computeDistance(result);
 
     this.noteService.setResult(result);
-
-    this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
-    this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
+    if(result.bus)
+      this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
+    if(result.metro)
+      this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
 
     if (result.velo) {
       for (let bikePoint of result.velo) {

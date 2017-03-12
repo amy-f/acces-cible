@@ -111,12 +111,15 @@ export class PageResultatComponent implements OnInit {
   }
 
   computeDistance(result: Result) {
-
-    for (let bus of result.bus.ligne) {
-      bus.distance = this.distance(bus.stop.lat, bus.stop.lng);
+    if (result.bus) {
+      for (let bus of result.bus.ligne) {
+        bus.distance = this.distance(bus.stop.lat, bus.stop.lng);
+      }
     }
-    for (let metro of result.metro.ligne) {
-      metro.distance = this.distance(metro.stop.lat, metro.stop.lng);
+    if (result.metro) {
+      for (let metro of result.metro.ligne) {
+        metro.distance = this.distance(metro.stop.lat, metro.stop.lng);
+      }
     }
   }
 

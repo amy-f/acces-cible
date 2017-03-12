@@ -44,20 +44,40 @@ export class AccesCibleService {
     result.bus.ligne = [];
 
     let busStop = new Ligne();
-    busStop.stop = {lat: 45.4985, lng: -73.575478};
-    busStop.nom = 'ligne 45';
+    busStop.stop = {lat: 45.500217, lng: -73.569052};
+    busStop.nom = 'ligne 150';
 
     result.bus.ligne.push(busStop);
 
     busStop = new Ligne();
-    busStop.stop = {lat: 45.4909, lng: -73.575465};
-    busStop.nom = 'ligne 36';
+    busStop.stop = {lat: 45.500217, lng: -73.569052};
+    busStop.nom = 'ligne 178';
 
     result.bus.ligne.push(busStop);
 
     busStop = new Ligne();
-    busStop.stop = {lat: 45.4945, lng: -73.575456};
-    busStop.nom = 'ligne 12';
+    busStop.stop = {lat: 45.500217, lng: -73.569052};
+    busStop.nom = 'ligne 350';
+
+    result.bus.ligne.push(busStop);
+
+
+    busStop = new Ligne();
+    busStop.stop = {lat: 45.500217, lng: -73.569052};
+    busStop.nom = 'ligne 355';
+    result.bus.ligne.push(busStop);
+
+
+    busStop = new Ligne();
+    busStop.stop = {lat: 45.501195, lng: -73.571707};
+    busStop.nom = 'ligne 358';
+
+    result.bus.ligne.push(busStop);
+
+
+    busStop = new Ligne();
+    busStop.stop = {lat: 45.502300, lng: -73.573316};
+    busStop.nom = 'ligne 420';
 
     result.bus.ligne.push(busStop);
 
@@ -84,20 +104,17 @@ export class AccesCibleService {
     result.metro.ligne = [];
 
     let metroStop = new Ligne();
-    metroStop.stop = {lat: 45.494964, lng: -73.574527};
-    metroStop.nom = 'Ligne bleu';
+    metroStop.stop = {lat: 45.501434, lng: -73.574176};
+    metroStop.nom = 'Ligne Verte';
 
     result.metro.ligne.push(metroStop);
 
     metroStop = new Ligne();
-    metroStop.stop = {lat: 45.494527, lng: -73.574246};
-    metroStop.nom = 'ligne verte';
+    metroStop.stop = {lat: 45.501562, lng: -73.563442};
+    metroStop.nom = 'Ligne Orange';
 
     result.metro.ligne.push(metroStop);
 
-    metroStop = new Ligne();
-    metroStop.stop = {lat: 45.494754, lng: -73.574246};
-    metroStop.nom = 'ligne orange';
 
     result.metro.ligne.push(metroStop);
 
@@ -107,13 +124,7 @@ export class AccesCibleService {
     let veloList: Velo[] = [];
 
     let velo = new Velo();
-    velo.start = {'lat': 45.494852, 'lng': -73.574345};
-    veloList.push(velo);
-    velo = new Velo();
-    velo.start = {'lat': 45.4945, 'lng': -73.574412};
-    veloList.push(velo);
-    velo = new Velo();
-    velo.start = {'lat': 45.494542, 'lng': -73.574036};
+    velo.start = {'lat': 45.502186, 'lng': -73.573356};
     veloList.push(velo);
 
     result.velo = veloList;

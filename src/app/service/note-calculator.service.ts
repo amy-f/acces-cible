@@ -23,10 +23,6 @@ export class NoteCalculatorService {
       coef: 60
     },
     {
-      nom: "marche",
-      coef: 30
-    },
-    {
       nom: "velo",
       coef: 42
     },
@@ -60,6 +56,11 @@ export class NoteCalculatorService {
   }
 
   public update () {
+    this.totalCoeef = 0;
+
+    for(let co of this.coeff) {
+      this.totalCoeef+= co.coef;
+    }
     if(this.result) {
       this.subscriber.next(this.computeNote(this.result));
     }
@@ -85,13 +86,19 @@ export class NoteCalculatorService {
     this.cote.coteGlobal = Math.round((this.cote.coteVelo + this.cote.coteBus + this.cote.coteMetro) / this.totalCoeef * 100);
 
     if(this.coeff[0].coef!= 0) {
-      this.cote.coteBus = this.cote.coteBus / this.coeff[0].coef * 100;
+      this.cote.coteBus = Math.round(this.cote.coteBus / this.totalCoeef * 100);
+    } else {
+      this.cote.coteBus = 0;
     }
     if(this.coeff[1].coef!= 0) {
-      this.cote.coteMetro = this.cote.coteMetro / this.coeff[1].coef * 100;
+      this.cote.coteMetro = Math.round(this.cote.coteMetro / this.totalCoeef * 100);
+    } else {
+      this.cote.coteMetro = 0;
     }
-    if(this.coeff[3].coef!= 0) {
-      this.cote.coteVelo = this.cote.coteVelo / this.coeff[3].coef * 100;
+    if(this.coeff[2].coef!= 0) {
+      this.cote.coteVelo = Math.round(this.cote.coteVelo / this.totalCoeef * 100);
+    } else {
+      this.cote.coteVelo = 0;
     }
 
     console.log(this.cote);
@@ -106,6 +113,8 @@ export class NoteCalculatorService {
      }
     if(this.coeff[0].coef!= 0) {
       this.cote.coteBus = nbBusStop / 10 * this.coeff[0].coef;
+    } else {
+       this.cote.coteBus = 0;
     }
   }
 
@@ -117,6 +126,8 @@ export class NoteCalculatorService {
     }
     if(this.coeff[1].coef!= 0) {
       this.cote.coteMetro = nbMetroStop / 3 * this.coeff[1].coef;
+    } else {
+      this.cote.coteMetro = 0;
     }
   }
 
@@ -126,8 +137,10 @@ export class NoteCalculatorService {
     if (nbVelo > 3) {
       nbVelo = 3;
     }
-    if(this.coeff[3].coef!= 0) {
-      this.cote.coteVelo = nbVelo / 3 * this.coeff[3].coef;
+    if(this.coeff[2].coef!= 0) {
+      this.cote.coteVelo = nbVelo / 3 * this.coeff[2].coef;
+    } else {
+      this.cote.coteVelo = 0;
     }
   }
 }

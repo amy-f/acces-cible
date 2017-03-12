@@ -30,6 +30,9 @@
 }
 
 .ui-g-12{
-    background-color:darkgrey;
     margin-top:10px;
+}
+
+.adresse {
+    text-align:center;
 }

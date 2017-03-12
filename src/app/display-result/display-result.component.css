@@ -71,6 +71,7 @@ p {
 }
 
 >>> h1,h2,h3,p,span, .text {
+font-family: 'Roboto', sans-serif;
   color:rgb(66,66,66);
 }
 

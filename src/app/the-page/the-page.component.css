@@ -52,7 +52,11 @@
     position: absolute;
     right: 0;
     top: 0;
-    width:11%;
+    height: 30px !important;
+    width: 150px;
+    margin-top: 5px;
+    background-color: #6a950f;
+    border: none;
 }
 
 .autocomplete-input {
@@ -102,6 +106,14 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-play-state: running;
+}
+
+.tagline {
+    position: relative;
+    top: 7vh;
+    font-size: 14pt;
+    width: 80%;
+    text-align: center;
 }
 
 @keyframes resize-and-move-left {

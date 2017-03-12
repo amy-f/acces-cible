@@ -10,7 +10,12 @@
     </div>
 
   <div class="ui-g input-container">
-    <input type="text" pInputText [(ngModel)]="adressString" />
-    <button type="button" (click)="onClickSearch()" pButton label="Rechercher"></button>
+    <input type="text" pInputText [(ngModel)]="adressString" placeholder="Tapez votre adresse ici..."/>
+    <button type="button" (click)="onClickSearch()" pButton label="Rechercher" icon="fa-search" iconPos="left"></button>
   </div>
+
+  <div class="tagline">
+    <p>L'application qui évalue l'accessibilité de votre emplacement.</p>
+  </div>
+  
 </div>

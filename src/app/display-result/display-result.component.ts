@@ -17,7 +17,7 @@ export class DisplayResultComponent implements OnInit {
   options: any;
 
   constructor() {
-
+    this.cote = new Cote();
   }
 
   ngOnInit() {

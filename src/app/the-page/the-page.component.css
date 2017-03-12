@@ -116,6 +116,15 @@
     text-align: center;
 }
 
+>>> h1,h2,h3,p,span {
+  font-family: 'Roboto', sans-serif;
+  color:rgb(66,66,66);
+}
+
+>>> button span {
+    color: white !important;
+}
+
 @keyframes resize-and-move-left {
   0% {
     transform: scale(1);

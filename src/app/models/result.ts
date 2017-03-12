@@ -9,6 +9,12 @@ export class Result {
   bus: TransportCom;
   metro: TransportCom;
   velo: Velo[];
+
+  constructor() {
+    this.bus = new TransportCom();
+    this.metro = new TransportCom();
+    this.velo = [];
+  }
 }
 
 export class TransportCom {
@@ -17,6 +23,11 @@ export class TransportCom {
     lng: number;
   }[];
   ligne: Ligne[];
+
+  constructor(){
+    this.positionsPol = [];
+    this.ligne = [];
+  }
 }
 
 export class Velo {

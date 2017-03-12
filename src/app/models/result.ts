@@ -3,6 +3,13 @@ export class Cote {
   coteBus: number;
   coteVelo: number;
   coteMetro: number;
+
+  constructor(){
+    this.coteGlobal = 0;
+    this.coteVelo = 0;
+    this.coteBus = 0;
+    this.coteMetro = 0;
+  }
 }
 
 export class Result {

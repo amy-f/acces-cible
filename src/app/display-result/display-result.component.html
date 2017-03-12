@@ -18,8 +18,7 @@
   </div>
 
   <div class="flex-item">
-    <p-chart #chart type="polarArea" [data]="data" [options]="options"></p-chart>
-    <button type="button" pButton (click)="chart.refresh()"></button>
+    <p-chart *ngFor="let subData of data" #chart type="polarArea" [data]="subData" [options]="options"></p-chart>
   </div>
 
 </div>

@@ -1,5 +1,5 @@
 <div *ngIf="address">
-  <sebm-google-map [latitude]="address.latitude" [longitude]="address.longitude" [zoom]="15" [scrollwheel] = false>
+  <sebm-google-map [latitude]="address.latitude" [longitude]="address.longitude" [zoom]="14" [scrollwheel] = false>
 
     <sebm-google-map-marker [latitude]="address.latitude" [longitude]="address.longitude" iconUrl="assets/marker.png">
 
@@ -8,9 +8,9 @@
         </sebm-google-map-info-window>
     </sebm-google-map-marker>
 
-    <sebm-map-polygon [paths]="busPaths" fillColor="#ff5500" strokeColor="#aa4655" [visible]="mapSettingsToggle.toggleBus"></sebm-map-polygon>
+    <sebm-map-polygon [paths]="busPaths" fillColor="rgba(255, 97, 131, 1)" strokeColor="rgba(255, 97, 131, 1)" [visible]="mapSettingsToggle.toggleBus"></sebm-map-polygon>
     <sebm-map-polygon [paths]="walkPaths" fillColor="#82b1ff" strokeColor="#2659ad" [visible]="mapSettingsToggle.toggleWalk"></sebm-map-polygon>
-    <sebm-map-polygon [paths]="metroPaths" fillColor="#fcd28d" strokeColor="#f4b042" [visible]="mapSettingsToggle.toggleMetro"></sebm-map-polygon>
+    <sebm-map-polygon [paths]="metroPaths" fillColor="rgba(146,217,217,1)" strokeColor="rgba(146,217,217, 1)" [visible]="mapSettingsToggle.toggleMetro"></sebm-map-polygon>
     <!--<sebm-map-polygon [paths]="trainPaths" fillColor="#0f750f" strokeColor="#77d177" [visible]="toggleTrain"></sebm-map-polygon>-->
     <sebm-map-polygon [paths]="bikePaths" fillColor="#c483c2" strokeColor="#751d73" [visible]="mapSettingsToggle.toggleBike"></sebm-map-polygon>
 

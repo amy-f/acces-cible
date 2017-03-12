@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule,PanelModule } from 'primeng/primeng';
 import { MenuItem, ChartModule } from 'primeng/primeng';
-import {CountUpModule} from 'countup.js/dist/countUp.module';
+import {CountUpModule} from 'countup/countUp.module';
 import { InputSwitchModule } from 'primeng/primeng';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';

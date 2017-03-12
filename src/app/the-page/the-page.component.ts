@@ -37,8 +37,8 @@ export class ThePageComponent implements OnInit {
     address = new Address();
 
     address.name = "FarFarAway";
-    address.latitude = 8.02454;
-    address.longitude = 43.45645;
+    address.latitude = 7.7256;
+    address.longitude = 42.2564;
 
     this.adressService.address = address;
     this.router.navigate(['/resultats']);

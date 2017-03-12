@@ -9,6 +9,7 @@
 .icone{
   font-size:30px;
   position: absolute;
+  right:0px;
   z-index: 1;
   transition: all 0.8s ease;
 }
@@ -50,9 +51,9 @@
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-justify-content: flex-end;;
+    -webkit-justify-content: flex-start;;
     -ms-flex-pack: justify;
-    justify-content: flex-end;
+    justify-content: flex-start;
     -webkit-align-content: center;
     -ms-flex-line-pack: center;
     align-content: center;

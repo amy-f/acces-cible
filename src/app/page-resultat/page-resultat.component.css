@@ -7,10 +7,6 @@
     width:100%;
 }
 
-.container {
-    background-color:purple;
-}
-
 .fa-arrow-left {
     font-size: 34px!important;
     left: 18px;
@@ -19,7 +15,7 @@
 }
 
 .fa-arrow-left:hover {
-  color:red;
+  color:rgb(107,148,32);
   font-size: 40px!important;
   left: 15px;
   top: 15px;
@@ -35,4 +31,8 @@
 
 .adresse {
     text-align:center;
+}
+
+>>> h1,h2,h3,p,span {
+  color:rgb(66,66,66);
 }

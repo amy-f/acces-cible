@@ -3,10 +3,14 @@
   <div class="flex-item">
     <div class="container-note">
       <!-- Beau compteur https://github.com/inorganik/countUp.js/ -->
-      <h1 countUp="{useEasing: false}"
-          [startVal]="0"
-          [endVal]="cote.coteGlobal"
-          [reanimateOnClick]="false"></h1>
+
+      <!--
+      <div class="text">{{cote?.coteGlobal}} <span class="pourcent">% </span><br>
+        <p>d'accébilité</p>
+      </div>
+      -->
+
+      <h1 countUp="{useEasing: false}" [startVal]="0" [endVal]="cote.coteGlobal" [reanimateOnClick]="false"></h1>
     </div>
   </div>
 

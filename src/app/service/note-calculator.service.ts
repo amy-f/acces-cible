@@ -74,9 +74,13 @@ export class NoteCalculatorService {
 
   public computeNote(result: Result): Cote {
     this.result = result;
-    this.computeBus(result.bus);
-    this.computeMetro(result.metro);
-    this.computeBike(result.velo);
+    if(result.bus)
+      this.computeBus(result.bus);
+
+    if(result.metro)
+      this.computeMetro(result.metro);
+    if(result.velo)
+      this.computeBike(result.velo);
 
     this.cote.coteGlobal = Math.round((this.cote.coteVelo + this.cote.coteBus + this.cote.coteMetro) / this.totalCoeef * 100);
 

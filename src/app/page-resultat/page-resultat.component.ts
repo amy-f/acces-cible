@@ -73,30 +73,35 @@ export class PageResultatComponent implements OnInit {
   }
 
   getPaths() {
-    let result = this.accesCibleService.getMock();
+    let result = this.accesCibleService.getHttp(this.address.latitude, this.address.longitude).subscribe(
+      res => this.compute(res)
+    );
+  }
+
+  private compute(result) {
 
     this.computeDistance(result);
 
     this.noteService.setResult(result);
-
-    this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
-    this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
-
+    if(result.bus) {
+      this.busPaths = result.bus.positionsPol as Array<LatLngLiteral>;
+      if (result.bus.ligne) {
+        for (let busLine of result.bus.ligne) {
+          this.busLines.push(busLine);
+        }
+      }
+    }
+    if(result.metro) {
+      this.metroPaths = result.metro.positionsPol as Array<LatLngLiteral>;
+      if (result.metro.ligne) {
+        for (let metroLine of result.metro.ligne) {
+          this.metroLines.push(metroLine);
+        }
+      }
+    }
     if (result.velo) {
       for (let bikePoint of result.velo) {
         this.bikeStartPoints.push(bikePoint.start);
-      }
-    }
-
-    if (result.bus.ligne) {
-      for (let busLine of result.bus.ligne) {
-        this.busLines.push(busLine);
-      }
-    }
-
-    if (result.metro.ligne) {
-      for (let metroLine of result.metro.ligne) {
-        this.metroLines.push(metroLine);
       }
     }
   }
@@ -106,12 +111,15 @@ export class PageResultatComponent implements OnInit {
   }
 
   computeDistance(result: Result) {
-
-    for (let bus of result.bus.ligne) {
-      bus.distance = this.distance(bus.stop.lat, bus.stop.lng);
+    if (result.bus) {
+      for (let bus of result.bus.ligne) {
+        bus.distance = this.distance(bus.stop.lat, bus.stop.lng);
+      }
     }
-    for (let metro of result.metro.ligne) {
-      metro.distance = this.distance(metro.stop.lat, metro.stop.lng);
+    if (result.metro) {
+      for (let metro of result.metro.ligne) {
+        metro.distance = this.distance(metro.stop.lat, metro.stop.lng);
+      }
     }
   }
 

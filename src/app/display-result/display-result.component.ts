@@ -33,7 +33,7 @@ export class DisplayResultComponent implements OnInit {
             //"#E7E9ED",
             //"#36A2EB"
           ],
-          data: [this.cote.coteBus, this.cote.coteVelo, this.cote.coteMetro],
+          // data: [this.cote.coteBus, this.cote.coteVelo, this.cote.coteMetro],
           options: {
             scales: {
               yAxes: [{

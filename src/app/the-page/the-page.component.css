@@ -33,14 +33,26 @@
 }
 
 .input-container {
-    width:100%;
+    width:80%;
+    position: relative;
 }
 
 .input-container input{
     width:100%;
-    margin-left:30px;
-    margin-right:30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*margin-left:30px;
+    margin-right:30px;*/
     
+}
+
+.input-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:11%;
 }
 
 .autocomplete-input {
@@ -51,7 +63,6 @@
     text-align: center;
     width: 100%;
     position: relative;
-    margin-top: 5vh;
     margin-bottom: 15vw;
 }
 
@@ -126,21 +137,10 @@
   }
 }
 
->>> span{
+/*>>> span{
     width:100%!important;    
 }
 
 >>> input{
     width:100%!important;    
-}
-
-.button-container {
-    width:100%;
-}
-
-.button-container button{
-    width:100%;
-    margin-left:30px;
-    margin-right:30px;
-    margin-top:10px;
-}
+}*/

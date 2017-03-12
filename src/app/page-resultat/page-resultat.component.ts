@@ -9,7 +9,7 @@ import { AdressService } from '../util/adress.service';
 import { AccesCibleService } from '../service/access-cible.service';
 import { NoteCalculatorService } from '../service/note-calculator.service';
 
-import{ Result, Cote} from '../models/result';
+import { Result, Cote} from '../models/result';
 
 import { LatLngLiteral } from 'angular2-google-maps/core';
 

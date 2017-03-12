@@ -26,6 +26,7 @@ export class PageSettingsComponent implements OnInit {
   }
 
   onCloseWindow() {
+    this.noteCalcultor.update();
     this.display = false;
     this.onClose.emit(true);
   }

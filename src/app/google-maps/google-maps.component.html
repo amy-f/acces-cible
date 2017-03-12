@@ -1,8 +1,7 @@
 <div *ngIf="address">
-  {{address.latitude}} / {{address.longitude}}
-  <sebm-google-map [latitude]="address.latitude" [longitude]="address.longitude" [zoom]="12">
+  <sebm-google-map [latitude]="address.latitude" [longitude]="address.longitude" [zoom]="15" [scrollwheel] = false>
 
-    <sebm-google-map-marker [latitude]="address.latitude" [longitude]="address.longitude">
+    <sebm-google-map-marker [latitude]="address.latitude" [longitude]="address.longitude" >
       <sebm-google-map-info-window [disableAutoPan]="true">
           {{ address.name }}
         </sebm-google-map-info-window>

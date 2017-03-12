@@ -5,7 +5,7 @@
   </div>
 
   <div class="ui-g-12 adresse">
-    <h3>Adresse</h3>
+    <h3>{{this.adressService.address.name}}</h3>
   </div>
 
   <div class="ui-g-12 resultats">
@@ -13,14 +13,14 @@
   </div>
 
   <div class="ui-g-12 carte">
-    <p-panel header="Résultats" [toggleable]="true">
-      Content
-    </p-panel>
-    <app-map-settings class="map-settings" [mapSettingsToggle]="mapSettingsToggle"></app-map-settings>
 
+    <app-map-settings class="map-settings" [mapSettingsToggle]="mapSettingsToggle"></app-map-settings>
+    
     <app-google-maps class="gmap" [address]="address" [metroPaths]="metroPaths" [busPaths]="metroPaths" [walkPaths]="walkPaths"
       [bikePaths]="bikePaths" [bikeStartPoints]="bikeStartPoints" [busLines]="busLines" [metroLines]="metroLines" [mapSettingsToggle]="mapSettingsToggle">
     </app-google-maps>
+
+
   </div>
 
 </div>

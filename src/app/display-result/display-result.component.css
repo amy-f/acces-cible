@@ -21,7 +21,6 @@
 
 
 .flex-item:nth-child(1) {
-    background-color: purple;
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -35,7 +34,6 @@
     }
 
 .flex-item:nth-child(2) {
-    background-color: wheat;
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -57,4 +55,21 @@
     .flex-item{
         width:100%!important;
     }
+}
+
+.container-note {
+    height: 100%; 
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    font-size: 60px;
+    text-align: center;
+}
+p {
+    margin-top:0px;
+    font-size: 30px;
 }

@@ -11,9 +11,11 @@ export class MapSettingsComponent implements OnInit {
 
   @Input() mapSettingsToggle: MapSettingsToggle;
 
-  constructor() {}
+  display = false;
 
-   ngOnInit() {}
+  constructor() { }
+
+  ngOnInit() { }
 
   onToggleBus(event) {
     this.mapSettingsToggle.toggleBus = event.checked;
@@ -29,6 +31,10 @@ export class MapSettingsComponent implements OnInit {
 
   onToggleBike(event) {
     this.mapSettingsToggle.toggleBike = event.checked;
+  }
+
+  showDToogles() {
+    this.display = true;
   }
 
 }

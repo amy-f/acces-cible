@@ -1,3 +1,84 @@
-.map-settings-container {
-  padding-bottom: 3px;
+.chariot-de-reglage{
+  width:100%;
+  height:30px;
+  position:relative;
+  overflow: hidden;
+  margin-bottom:5px;
+}
+
+.icone{
+  font-size:30px;
+  position: absolute;
+  z-index: 100;
+  transition: all 0.8s ease;
+}
+
+.icone:hover {
+  color:red;
+}
+
+
+.toogle-container{
+  height: 100%;
+  width:100%;
+  position:absolute;
+  top:0px;
+  left:-100%;
+  text-align: right;
+  transition: left 0.8s ease-in-out;
+}
+
+.display {
+  left:-100%;
+  left:0px;
+}
+
+.rotate {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-end;;
+    -ms-flex-pack: justify;
+    justify-content: flex-end;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    }
+
+.flex-item{
+    padding-left:10px;
+    padding-right:5px;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+span {
+  font-size: 20px;
+}
+
+>>> .ui-inputswitch{
+  margin-bottom:-7px;
 }

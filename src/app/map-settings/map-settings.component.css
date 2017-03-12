@@ -76,7 +76,7 @@
     align-self: stretch;
 }
 
-.ui-inputswitch-on {
+>>> .ui-inputswitch-on {
   background-color:rgb(107,148,32)!important;
 }
 

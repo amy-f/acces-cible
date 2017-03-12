@@ -9,12 +9,12 @@
 .icone{
   font-size:30px;
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   transition: all 0.8s ease;
 }
 
 .icone:hover {
-  color:red;
+  color:rgb(107,148,32);
 }
 
 
@@ -81,4 +81,8 @@ span {
 
 >>> .ui-inputswitch{
   margin-bottom:-7px;
+}
+
+>>> h1,h2,h3,p,span {
+  color:rgb(66,66,66);
 }

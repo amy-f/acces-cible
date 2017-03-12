@@ -50,7 +50,7 @@ export class PageResultatComponent implements OnInit {
   busLines: Ligne[] = [];
   metroLines: Ligne[] = [];
 
-  cote: Cote;
+  cote: Cote = new Cote();
 
   mapSettingsToggle: MapSettingsToggle = new MapSettingsToggle();
 

@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule, PanelModule } from 'primeng/primeng';
 import { MenuItem, ChartModule } from 'primeng/primeng';
+import {CountUpModule} from 'countup/countUp.module';
 import { InputSwitchModule } from 'primeng/primeng';
 import { FieldsetModule } from 'primeng/primeng';
 
@@ -60,7 +61,8 @@ import { DisplayResultComponent } from './display-result/display-result.componen
     SliderModule,
     PanelModule,
     ChartModule,
-    FieldsetModule
+    FieldsetModule,
+    CountUpModule
   ],
   providers: [
     AdressService,

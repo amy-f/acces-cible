@@ -3,12 +3,25 @@ export class Cote {
   coteBus: number;
   coteVelo: number;
   coteMetro: number;
+
+  constructor(){
+    this.coteGlobal = 0;
+    this.coteVelo = 0;
+    this.coteBus = 0;
+    this.coteMetro = 0;
+  }
 }
 
 export class Result {
   bus: TransportCom;
   metro: TransportCom;
   velo: Velo[];
+
+  constructor() {
+    this.bus = new TransportCom();
+    this.metro = new TransportCom();
+    this.velo = [];
+  }
 }
 
 export class TransportCom {
@@ -17,6 +30,11 @@ export class TransportCom {
     lng: number;
   }[];
   ligne: Ligne[];
+
+  constructor(){
+    this.positionsPol = [];
+    this.ligne = [];
+  }
 }
 
 export class Velo {

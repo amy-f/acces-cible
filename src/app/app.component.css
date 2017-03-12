@@ -6,8 +6,17 @@ i {
 }
 
 i:hover {
-  color:red;
+  color:rgb(107,148,32);
   font-size: 40px!important;
   right: 15px;
   top: 15px;
 }
+
+>>> h1,h2,h3,p,span {
+  color:rgb(66,66,66);
+}
+
+>>> .fa {
+  color:rgb(66,66,66);
+}
+

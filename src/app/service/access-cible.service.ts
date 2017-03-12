@@ -6,12 +6,12 @@ import {Result, TransportCom, Velo, Ligne} from '../models/result';
 @Injectable()
 export class AccesCibleService {
 
-  private heroesUrl = 'app/heroes'
+  private heroesUrl = 'http://localhost:1337/superGoodUrl'
 
   constructor (private http: Http) {}
 
   getHttp(lat, lng): Observable<Result> {
-    return this.http.get(this.heroesUrl+'/'+ lat + '/' + lng)
+    return this.http.get(this.heroesUrl+'/'+ lat + '/' + lng).map(res => res.json())
     .catch(this.handleError);
   }
 

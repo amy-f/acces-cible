@@ -1,10 +1,26 @@
-<p-accordion class="map-settings-container">
-    <p-accordionTab header="Paramètres de la carte">
-        <div class="toggle-polygons">
-          <p-inputSwitch (onChange)="onToggleBus($event)" [(ngModel)]="mapSettingsToggle.toggleBus"></p-inputSwitch> Bus
-          <p-inputSwitch (onChange)="onToggleWalk($event)" [(ngModel)]="mapSettingsToggle.toggleWalk"></p-inputSwitch> Marche
-          <p-inputSwitch (onChange)="onToggleMetro($event)" [(ngModel)]="mapSettingsToggle.toggleMetro"></p-inputSwitch> Métro
-          <p-inputSwitch (onChange)="onToggleBike($event)" [(ngModel)]="mapSettingsToggle.toggleBike"></p-inputSwitch> Vélo
-        </div>
-    </p-accordionTab>
-  </p-accordion>
+<div class="chariot-de-reglage">
+
+  <i class="fa fa-cog icone" aria-hidden="true" (click)="display=!display" [class.rotate]="!display"></i>
+
+
+  <div class="toogle-container flex-container" [class.display]="display">
+    <div class="flex-item">
+      <span>Bus:</span>
+      <p-inputSwitch (onChange)="onToggleBus($event)" [(ngModel)]="mapSettingsToggle.toggleBus"></p-inputSwitch>
+    </div>
+    <div class="flex-item">
+      <span>Marche:</span>
+      <p-inputSwitch (onChange)="onToggleWalk($event)" [(ngModel)]="mapSettingsToggle.toggleWalk"></p-inputSwitch>
+    </div>
+    <div class="flex-item">
+      <span>Métro:</span>
+      <p-inputSwitch (onChange)="onToggleMetro($event)" [(ngModel)]="mapSettingsToggle.toggleMetro"></p-inputSwitch>
+    </div>
+    <div class="flex-item">
+      <span>Vélo:</span>
+      <p-inputSwitch (onChange)="onToggleBike($event)" [(ngModel)]="mapSettingsToggle.toggleBike"></p-inputSwitch>
+    </div>
+  </div>
+
+
+</div>

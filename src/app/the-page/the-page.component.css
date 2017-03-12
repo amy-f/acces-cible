@@ -47,6 +47,85 @@
   width: 100%;
 }
 
+.logo-container {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: 5vh;
+    margin-bottom: 15vw;
+}
+
+.big-logo-container, .text-logo-container {
+    position: absolute;
+    top: -0;
+    left: 0;
+}
+
+.big-logo-container {
+    width: 100%;
+    z-index: 10;
+    top: -2vw;
+}
+
+.big-logo {
+    max-width: 13%;
+    max-height: 13%;
+    animation-name: resize-and-move-left;
+    animation-duration: 2.5s; 
+    animation-timing-function: ease-in-out; 
+    animation-delay: 0;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.text-logo {
+    max-width: 45%;
+    max-height: 45%;
+    animation-name: opacity;
+    animation-duration: 3.5s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes resize-and-move-left {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(0.73);
+  }
+  60% {
+    transform: scale(0.70) translate(0, 0);
+  }
+  100% {
+    transform: scale(0.70) translate(-25.15vw, 0);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  80% {
+      opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 >>> span{
     width:100%!important;    
 }

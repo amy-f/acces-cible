@@ -6,3 +6,30 @@
 .map-settings {
     width:100%;
 }
+
+.container {
+    background-color:purple;
+}
+
+.fa-arrow-left {
+    font-size: 34px!important;
+    left: 18px;
+    top: 18px;
+    position: fixed;
+}
+
+.fa-arrow-left:hover {
+  color:red;
+  font-size: 40px!important;
+  left: 15px;
+  top: 15px;
+}
+
+.fleche-retour {
+    height: 40px;
+}
+
+.ui-g-12{
+    background-color:darkgrey;
+    margin-top:10px;
+}

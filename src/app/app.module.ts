@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule } from 'primeng/primeng';
-import { MenuItem } from 'primeng/primeng';
+import { InputTextModule, ButtonModule, AutoCompleteModule, DialogModule, AccordionModule,PanelModule } from 'primeng/primeng';
+import { MenuItem, ChartModule } from 'primeng/primeng';
 import { InputSwitchModule } from 'primeng/primeng';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -22,6 +22,7 @@ import { NoteCalculatorService } from './service/note-calculator.service';
 import { PageSettingsComponent } from './page-settings/page-settings.component';
 import { MapSettingsComponent } from './map-settings/map-settings.component';
 import {SliderModule} from "primeng/components/slider/slider";
+import { DisplayResultComponent } from './display-result/display-result.component';
 
 
 @NgModule({
@@ -33,8 +34,14 @@ import {SliderModule} from "primeng/components/slider/slider";
     AutoCompleteAdressComponent,
     PageSettingsComponent,
     MapSettingsComponent,
+<<<<<<< HEAD
     // GoogleplaceDirective,
     PageSettingsComponent
+=======
+    GoogleplaceDirective,
+    PageSettingsComponent,
+    DisplayResultComponent
+>>>>>>> a8f078886002eace30ecdf6c9c9528c1348ae0b9
   ],
   imports: [
     RouterModule.forRoot([
@@ -55,7 +62,9 @@ import {SliderModule} from "primeng/components/slider/slider";
     DialogModule,
     InputSwitchModule,
     AccordionModule,
-    SliderModule
+    SliderModule,
+    PanelModule,
+    ChartModule
   ],
   providers: [
     AdressService,
